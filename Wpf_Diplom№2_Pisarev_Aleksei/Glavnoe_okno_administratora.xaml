@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpf_Diplom_2_Pisarev_Aleksei"
         mc:Ignorable="d"
-        Title="Glavnoe_okno_administratora" Height="450" Width="800"
+        Title="Glavnoe_okno_administratora" Height="450" Width="1100"
         AllowsTransparency="True" Background="Transparent"
         WindowStyle="None" ResizeMode="NoResize">
     <Grid>
@@ -25,48 +25,87 @@
         </Border>
 
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <!--Первый блок-->
             <StackPanel Orientation="Horizontal">
-                <Image Source="Images_icon/profel.png" Width="50" Height="50" HorizontalAlignment="Left"/>
-                <Button Content="Профель" Width="170" Height="40" FontSize="25" Margin="5,5,5,5" HorizontalAlignment="Right">
-                </Button>
+                <Image Source="Images_icon/profel.png" Width="75" Height="50" HorizontalAlignment="Center"/>
+                <Button Content="Профель" Width="170" Height="40" FontSize="25"  HorizontalAlignment="Left" Style="{StaticResource Button1}" />
+                
             </StackPanel>
-
+            <Border Width="250"
+                    Height="3"
+                    Background="White"
+                    Opacity="0.9"/>
+            <!--Конец первого блока-->
+            <!--Сторой блок-->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Image Source="Images_icon/Soyrydniki_ted.png" Width="50" Height="50" HorizontalAlignment="Left"/>
-                <Button x:Name="Add_Sotrydniki" Content="Сотрудники" Width="170" Height="40" FontSize="25" Click="Add_Sotrydniki_Click"/>
+                <Button x:Name="Add_Sotrydniki" Content="Сотрудники" Width="170" Height="40" FontSize="25" Click="Add_Sotrydniki_Click" Style="{StaticResource Button1}"/>
             </StackPanel>
-
+            <Border Width="250"
+                    Height="3"
+                    Background="White"
+                    Opacity="0.9"/>
+            <!--Конец второго блока-->
+            <!--Третий блок-->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Image Source="Images_icon/Sklad.png" Width="50" Height="50" HorizontalAlignment="Left"/>
-                <Button Content="Склад" Width="170" Height="40" FontSize="25"/>
+                <Image Source="Images_icon/Sklad.png" Width="50" Height="50" HorizontalAlignment="Left" />
+                <Button Content="Склад" Width="170" Height="40" FontSize="25" Style="{StaticResource Button1}"/>
             </StackPanel>
-
+            <Border Width="250"
+                    Height="3"
+                    Background="White"
+                    Opacity="0.9"/>
+            <!--Конец третьего блока-->
+            <!--Четвёртый блок-->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Image Source="Images_icon/Zayavki.png" Width="50" Height="50" HorizontalAlignment="Left"/>
-                <Button Content="Заявки" Width="170" Height="40" FontSize="25"/>
+                <Button Content="Заявки" Width="170" Height="40" FontSize="25" Style="{StaticResource Button1}"/>
             </StackPanel>
-
+            <Border Width="250"
+                    Height="3"
+                    Background="White"
+                    Opacity="0.9"/>
+            <!--Конец четвертого блока-->
+            <!--Пятый блок-->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Image Source="Images_icon/Oborydovanie.png" Width="50" Height="50" HorizontalAlignment="Left"/>
-                <Button Content="Оборудование" Width="170" Height="40" FontSize="25"/>
+                <Button Content="Оборудование" Width="170" Height="40" FontSize="25" Style="{StaticResource Button1}"/>
             </StackPanel>
-
+            <Border Width="250"
+                    Height="3"
+                    Background="White"
+                    Opacity="0.9"/>
+            <!--Конец пятого блока-->
+            <!--Шестой блок-->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Image Source="Images_icon/Otchet.png" Width="50" Height="50" HorizontalAlignment="Left"/>
-                <Button Content="Отчеты" Width="170" Height="40" FontSize="25"/>
+                <Button Content="Отчеты" Width="170" Height="40" FontSize="25" Style="{StaticResource Button1}"/>
             </StackPanel>
-            
+            <Border Width="250"
+                    Height="3"
+                    Background="White"
+                    Opacity="0.9"/>
+            <!--Конец шестого блока-->
+            <!--Седьмой блок-->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Image Source="Images_icon/Optins.png" Width="50" Height="50" HorizontalAlignment="Left"/>
-                <Button Content="Настройки" Width="170" Height="40" FontSize="25"/>
+                <Button Content="Настройки" Width="170" Height="40" FontSize="25" Style="{StaticResource Button1}"/>
             </StackPanel>
-
+            <Border Width="250"
+                    Height="3"
+                    Background="White"
+                    Opacity="0.9"/>
+            <!--Конец седьмого блока-->
+            <!--Восьмой блок-->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Image Source="Images_icon/Close.png" Width="50" Height="50" HorizontalAlignment="Left"/>
-                <Button Content="Выход" Width="170" Height="40" FontSize="25"/>
+                <Button Content="Выход" Width="170" Height="40" FontSize="25" Style="{StaticResource Button1}"/>
             </StackPanel>
-
-
+            <Border Width="250"
+                    Height="3"
+                    Background="White"
+                    Opacity="0.9"/>
+            <!--Конец восьмого блока-->
         </StackPanel>
         <Frame x:Name="Frame_Add" Grid.Column="1" Background="Transparent" NavigationUIVisibility="Hidden"/>
     </Grid>

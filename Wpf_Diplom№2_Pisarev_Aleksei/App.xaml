@@ -8,8 +8,24 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="ModernButtonTheme.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary.MergedDictionaries> 
+            <Style TargetType="TextBlock" x:Key="TextBlock1">
+            <Setter Property="FontSize"  Value="20"/>
+            <Setter Property="FontFamily"  Value="Helvetica"/>
+            <Setter Property="Foreground" Value="White"/>
+                
+            </Style>
+            <Style TargetType="TextBox" x:Key="TextBox1">
+                <Setter Property="Height" Value="30"/>
+                <Setter Property="Width" Value="200"/>
+            </Style>
+
+            <Style TargetType="ComboBox" x:Key="ComboBox1">
+                <Setter Property="Height" Value="30"/>
+                <Setter Property="Width" Value="200"/>
+            </Style>
+
         </ResourceDictionary>
-        
+       
     </Application.Resources>
 </Application>

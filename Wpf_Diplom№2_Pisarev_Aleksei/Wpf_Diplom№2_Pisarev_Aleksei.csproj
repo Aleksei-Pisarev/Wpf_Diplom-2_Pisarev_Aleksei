@@ -66,8 +66,47 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Oborydovanie_programmnogo_odesprchenie\Compitytor.xaml.cs">
+      <DependentUpon>Compitytor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Oborydovanie_programmnogo_odesprchenie\Page_PO\Page_oborydovanie.xaml.cs">
+      <DependentUpon>Page_oborydovanie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Oborydovanie_programmnogo_odesprchenie\Page_PO\Page_PO.xaml.cs">
+      <DependentUpon>Page_PO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Oborydovanie_programmnogo_odesprchenie\Window_oborydovanie\Proizvoditel_PO.xaml.cs">
+      <DependentUpon>Proizvoditel_PO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Oborydovanie_programmnogo_odesprchenie\Window_oborydovanie\Tipi_kompterov_PO.xaml.cs">
+      <DependentUpon>Tipi_kompterov_PO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Oborydovanie_programmnogo_odesprchenie\Window_oborydovanie\Tipi_oborydovania_PO.xaml.cs">
+      <DependentUpon>Tipi_oborydovania_PO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Oborydovanie_programmnogo_odesprchenie\Window_oborydovanie\Tipi_Po.xaml.cs">
+      <DependentUpon>Tipi_Po.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Sotrydniki\AppSotrydniki.xaml.cs">
       <DependentUpon>AppSotrydniki.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sotrydniki\Table_sotrydnika_otdel_doljnosti\Tadle_sotrydnika.xaml.cs">
+      <DependentUpon>Tadle_sotrydnika.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sotrydniki\Window_sotrydniki\Doljnosti_sotrydnika.xaml.cs">
+      <DependentUpon>Doljnosti_sotrydnika.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sotrydniki\Window_sotrydniki\Otdel_sotrydnika.xaml.cs">
+      <DependentUpon>Otdel_sotrydnika.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Zayavki_sotrydnikov\Registr_Zayavki.xaml.cs">
+      <DependentUpon>Registr_Zayavki.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Zayavki_sotrydnikov\Time_zayavki.xaml.cs">
+      <DependentUpon>Time_zayavki.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Zayavki_sotrydnikov\Window_obsyjdenie_zayavki.xaml.cs">
+      <DependentUpon>Window_obsyjdenie_zayavki.xaml</DependentUpon>
     </Compile>
     <Page Include="Glavnoe_okno_administratora.xaml">
       <SubType>Designer</SubType>
@@ -92,7 +131,59 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Oborydovanie_programmnogo_odesprchenie\Compitytor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Oborydovanie_programmnogo_odesprchenie\Page_PO\Page_oborydovanie.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Oborydovanie_programmnogo_odesprchenie\Page_PO\Page_PO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Oborydovanie_programmnogo_odesprchenie\Window_oborydovanie\Proizvoditel_PO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Oborydovanie_programmnogo_odesprchenie\Window_oborydovanie\Tipi_kompterov_PO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Oborydovanie_programmnogo_odesprchenie\Window_oborydovanie\Tipi_oborydovania_PO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Oborydovanie_programmnogo_odesprchenie\Window_oborydovanie\Tipi_Po.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Sotrydniki\AppSotrydniki.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sotrydniki\Table_sotrydnika_otdel_doljnosti\Tadle_sotrydnika.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sotrydniki\Window_sotrydniki\Doljnosti_sotrydnika.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sotrydniki\Window_sotrydniki\Otdel_sotrydnika.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Zayavki_sotrydnikov\Registr_Zayavki.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Zayavki_sotrydnikov\Time_zayavki.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Zayavki_sotrydnikov\Window_obsyjdenie_zayavki.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -159,6 +250,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images_icon\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Sklad_odorydovanie\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
