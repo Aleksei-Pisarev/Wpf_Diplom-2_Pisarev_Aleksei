@@ -49,8 +49,40 @@ namespace Wpf_Diplom_2_Pisarev_Aleksei.Sotrydniki
                 errors.AppendLine("Укажите Фамилию Имя Отчество");
             if (_currentSotrudniki.Doljnosti.Nazvanie == null)
                 errors.AppendLine("Выберите название должности");
-            if (null.IsNullOrWhiteSpace(_currentSotrudniki.DR.text )
+            if (string.IsNullOrWhiteSpace(_currentSotrudniki.DR.Date.ToString()))
+                errors.AppendLine("Укажите дату рождения");
+            if (string.IsNullOrWhiteSpace(_currentSotrudniki.Telefon))
+                errors.AppendLine("Укажите номер телефона");
+            if (string.IsNullOrWhiteSpace(_currentSotrudniki.e_mail))
+                errors.AppendLine("Укажите электронную почту");
+            if (string.IsNullOrWhiteSpace(_currentSotrudniki.Kommentatij))
+                errors.AppendLine("Укажите электронную почту");
+            if (_currentSotrudniki.role <= 0)
+                errors.AppendLine($"Выберите должность сотрудника для регистрации \n 1) Администратор \n 2) Пользователь \n 3) СисАдминистратор \n айди должности должен называться с тем, как вы дали должность самому сотруднику"  );
 
+            if (string.IsNullOrWhiteSpace(_currentSotrudniki.Login))
+                errors.AppendLine("Укажите название Логина для авторизации");
+
+            if (string.IsNullOrWhiteSpace(_currentSotrudniki.Password))
+                errors.AppendLine("Укажите название Пароля для авторизации");
+
+            if (errors.Length > 0)
+            {
+                MessageBox.Show(errors.ToString());
+                return;
+            }
+            if (_currentSotrudniki.Id_otdela == 0)
+                    BD_Diplom_PisarevEntities.GetContext().Sotrudniki.Add(_currentSotrudniki);
+            try
+            {
+                BD_Diplom_PisarevEntities.GetContext().SaveChanges();
+                MessageBox.Show("Информация сохранена");
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
     }
 }
