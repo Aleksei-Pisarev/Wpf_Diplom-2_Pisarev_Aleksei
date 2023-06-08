@@ -5,8 +5,65 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpf_Diplom_2_Pisarev_Aleksei.Sotrydniki.Window_sotrydniki"
         mc:Ignorable="d"
-        Title="Otdel_sotrydnika" Height="450" Width="800">
+        Title="Otdel_sotrydnika" Height="380" Width="400"
+        AllowsTransparency="True" Background="Transparent"
+        WindowStyle="None" ResizeMode="NoResize"
+        MouseDown="Window_MouseDown" IsVisibleChanged="Window_IsVisibleChanged">
     <Grid>
-        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="19*"/>
+                <RowDefinition Height="41*"/>
+            </Grid.RowDefinitions>
+
+
+            <Border CornerRadius="10" Grid.RowSpan="2">
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#7be9f6" Offset="0.0"/>
+                        <GradientStop Color="#f083ba" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+
+            <Grid Grid.Column="0" Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Height="100" Width="180" >
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,0,0">
+                        <TextBlock Text="Отдел" Style="{StaticResource TextBlock1}" Margin="0,5,10,0" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Height="130" Width="180">
+                    <StackPanel/>
+                    <TextBox Text="{Binding Nazvanie}" Style="{StaticResource TextBox1}" Margin="0,10,10,0"/>
+                    <StackPanel>
+                        <Button x:Name="BtEdit_Otdel" Click="BtEdit_Otdel_Click" Width="130" Height="35" Content="Добавить" Margin="0,5,0,0" />
+                        <Button x:Name="Close"  Width="130" Height="35" Content="Выход" Margin="0,5,0,0" Click="Close_Click" />
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+
+            <DataGrid Grid.Row="1" x:Name="DtGridOtdel_sotrydnika" AutoGenerateColumns="False" IsReadOnly="True" Height="190">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Номер Отдела" Binding="{Binding Id_otdela}" Width="115"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Отдел" Binding="{Binding Nazvanie}" Width="150"/>
+                    <DataGridTemplateColumn Width="auto">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Удалить" Name="BtEdit"  ></Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </Grid>
     </Grid>
 </Window>

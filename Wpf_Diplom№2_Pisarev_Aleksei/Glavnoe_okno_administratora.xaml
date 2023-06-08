@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Glavnoe_okno_administratora" Height="450" Width="1100"
         AllowsTransparency="True" Background="Transparent"
-        WindowStyle="None" ResizeMode="NoResize">
+        WindowStyle="None" ResizeMode="NoResize"  MouseDown="Window_MouseDown">
     <Grid>
 
         <Grid.ColumnDefinitions>
@@ -77,14 +77,8 @@
                     Opacity="0.9"/>
             <!--Конец пятого блока-->
             <!--Шестой блок-->
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Image Source="Images_icon/Otchet.png" Width="50" Height="50" HorizontalAlignment="Left"/>
-                <Button Content="Отчеты" Width="170" Height="40" FontSize="25" Style="{StaticResource Button1}"/>
-            </StackPanel>
-            <Border Width="250"
-                    Height="3"
-                    Background="White"
-                    Opacity="0.9"/>
+           
+            
             <!--Конец шестого блока-->
             <!--Седьмой блок-->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -99,7 +93,7 @@
             <!--Восьмой блок-->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Image Source="Images_icon/Close.png" Width="50" Height="50" HorizontalAlignment="Left"/>
-                <Button Content="Выход" Width="170" Height="40" FontSize="25" Style="{StaticResource Button1}"/>
+                <Button x:Name="Close" Click="Close_Click" Content="Выход" Width="170" Height="40" FontSize="25" Style="{StaticResource Button1}"/>
             </StackPanel>
             <Border Width="250"
                     Height="3"

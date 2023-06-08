@@ -1,0 +1,1536 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище BD_Diplom_PisarevModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Complect_oborud">
+          <Key>
+            <PropertyRef Name="Id_complect" />
+          </Key>
+          <Property Name="Id_complect" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_oborud" Type="int" Nullable="false" />
+          <Property Name="Id_tipa_complect" Type="int" Nullable="false" />
+          <Property Name="Id_firmi" Type="int" Nullable="false" />
+          <Property Name="Model" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Id_sklad" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Doljnosti">
+          <Key>
+            <PropertyRef Name="Id_doljnosti" />
+          </Key>
+          <Property Name="Id_doljnosti" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazvanie" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Firmi">
+          <Key>
+            <PropertyRef Name="Id_firmi" />
+          </Key>
+          <Property Name="Id_firmi" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazvanie" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Haracteristiki">
+          <Key>
+            <PropertyRef Name="Id_Haracteristiki" />
+          </Key>
+          <Property Name="Id_Haracteristiki" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazvanie" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Id_tipa_complect" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Haracteristiki_Complect">
+          <Key>
+            <PropertyRef Name="Id_haracter_compl" />
+          </Key>
+          <Property Name="Id_haracter_compl" Type="int" Nullable="false" />
+          <Property Name="Id_complect" Type="int" Nullable="false" />
+          <Property Name="Id_haracteristiki" Type="int" Nullable="false" />
+          <Property Name="Znahenie" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Id_topa_complect" Type="int" Nullable="false" />
+          <Property Name="Id_Sklad" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Hatacteristiki_PO">
+          <Key>
+            <PropertyRef Name="Id_harakt_PO" />
+          </Key>
+          <Property Name="Id_harakt_PO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_tipa_PO" Type="int" Nullable="false" />
+          <Property Name="Id_PO" Type="int" Nullable="false" />
+          <Property Name="Data_ustanovki" Type="date" Nullable="false" />
+          <Property Name="Data_posled_obnovl" Type="date" Nullable="false" />
+          <Property Name="Id_oborud" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Oborudovanie">
+          <Key>
+            <PropertyRef Name="Id_oborud" />
+          </Key>
+          <Property Name="Id_oborud" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_tipa_oborud" Type="int" Nullable="false" />
+          <Property Name="Id_Sotrud" Type="int" Nullable="false" />
+          <Property Name="Id_otdela" Type="int" Nullable="false" />
+          <Property Name="imya_oborud" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Ip_adres" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Odsujd_zayavki">
+          <Key>
+            <PropertyRef Name="Id_obsujd" />
+          </Key>
+          <Property Name="Id_obsujd" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_zayavki" Type="int" Nullable="false" />
+          <Property Name="Data_vramya" Type="date" Nullable="false" />
+          <Property Name="Kommentarij" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Id_kem_soversh" Type="int" Nullable="false" />
+          <Property Name="Id_komu" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Otdeli">
+          <Key>
+            <PropertyRef Name="Id_otdela" />
+          </Key>
+          <Property Name="Id_otdela" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazvanie" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PO">
+          <Key>
+            <PropertyRef Name="Id_PO" />
+          </Key>
+          <Property Name="Id_PO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_tipa_PO" Type="int" Nullable="false" />
+          <Property Name="Nazvanie" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Srok_dejstviya" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Role_Sotrudniki">
+          <Key>
+            <PropertyRef Name="Id_Role" />
+          </Key>
+          <Property Name="Id_Role" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazvanie" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sklade">
+          <Key>
+            <PropertyRef Name="Id_Sklad" />
+          </Key>
+          <Property Name="Id_Sklad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_tipa_complect" Type="int" Nullable="false" />
+          <Property Name="Id_firmi" Type="int" Nullable="false" />
+          <Property Name="model" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Vsego" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sotrudniki">
+          <Key>
+            <PropertyRef Name="Id_sotrud" />
+          </Key>
+          <Property Name="Id_sotrud" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FIO" Type="varchar(max)" Nullable="false" />
+          <Property Name="Id_otdela" Type="int" Nullable="false" />
+          <Property Name="Id_doljnosti" Type="int" Nullable="false" />
+          <Property Name="DR" Type="date" Nullable="false" />
+          <Property Name="Adres" Type="varchar(max)" Nullable="false" />
+          <Property Name="Telefon" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="e_mail" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Kommentatij" Type="varchar(max)" Nullable="false" />
+          <Property Name="role" Type="int" Nullable="false" />
+          <Property Name="Id_role" Type="int" Nullable="false" />
+          <Property Name="Login" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Temi_zayavok">
+          <Key>
+            <PropertyRef Name="Id_temi_zayavi" />
+          </Key>
+          <Property Name="Id_temi_zayavi" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazvanie" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tipi_complect">
+          <Key>
+            <PropertyRef Name="Id_tipa_complect" />
+          </Key>
+          <Property Name="Id_tipa_complect" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazvanie" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tipi_oborud">
+          <Key>
+            <PropertyRef Name="Id_tipa_oborud" />
+          </Key>
+          <Property Name="Id_tipa_oborud" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazvanie" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tipi_PO">
+          <Key>
+            <PropertyRef Name="Id_tipa_PO" />
+          </Key>
+          <Property Name="Id_tipa_PO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazvanie" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Zayavki">
+          <Key>
+            <PropertyRef Name="Id_zayavki" />
+          </Key>
+          <Property Name="Id_zayavki" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_sotrud" Type="int" Nullable="false" />
+          <Property Name="Id_otdela" Type="int" Nullable="false" />
+          <Property Name="Data" Type="date" Nullable="false" />
+          <Property Name="Data_zaversh" Type="date" Nullable="false" />
+          <Property Name="Id_sotrud_teh" Type="int" Nullable="false" />
+          <Property Name="Id_temi_zayavki" Type="int" Nullable="false" />
+          <Property Name="Vajnost" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Statys" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sostoyanie" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Id_tipa_PO" Type="int" Nullable="false" />
+          <Property Name="Id_PO" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Complect_oborud_Firmi">
+          <End Role="Firmi" Type="Self.Firmi" Multiplicity="1" />
+          <End Role="Complect_oborud" Type="Self.Complect_oborud" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Firmi">
+              <PropertyRef Name="Id_firmi" />
+            </Principal>
+            <Dependent Role="Complect_oborud">
+              <PropertyRef Name="Id_firmi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Complect_oborud_Oborudovanie">
+          <End Role="Oborudovanie" Type="Self.Oborudovanie" Multiplicity="1" />
+          <End Role="Complect_oborud" Type="Self.Complect_oborud" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Oborudovanie">
+              <PropertyRef Name="Id_oborud" />
+            </Principal>
+            <Dependent Role="Complect_oborud">
+              <PropertyRef Name="Id_oborud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Complect_oborud_Sklade">
+          <End Role="Sklade" Type="Self.Sklade" Multiplicity="1" />
+          <End Role="Complect_oborud" Type="Self.Complect_oborud" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sklade">
+              <PropertyRef Name="Id_Sklad" />
+            </Principal>
+            <Dependent Role="Complect_oborud">
+              <PropertyRef Name="Id_sklad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Complect_oborud_Tipi_complect">
+          <End Role="Tipi_complect" Type="Self.Tipi_complect" Multiplicity="1" />
+          <End Role="Complect_oborud" Type="Self.Complect_oborud" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipi_complect">
+              <PropertyRef Name="Id_tipa_complect" />
+            </Principal>
+            <Dependent Role="Complect_oborud">
+              <PropertyRef Name="Id_tipa_complect" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Haracteristiki_Complect_Haracteristiki">
+          <End Role="Haracteristiki" Type="Self.Haracteristiki" Multiplicity="1" />
+          <End Role="Haracteristiki_Complect" Type="Self.Haracteristiki_Complect" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Haracteristiki">
+              <PropertyRef Name="Id_Haracteristiki" />
+            </Principal>
+            <Dependent Role="Haracteristiki_Complect">
+              <PropertyRef Name="Id_haracteristiki" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Haracteristiki_Tipi_complect">
+          <End Role="Tipi_complect" Type="Self.Tipi_complect" Multiplicity="1" />
+          <End Role="Haracteristiki" Type="Self.Haracteristiki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipi_complect">
+              <PropertyRef Name="Id_tipa_complect" />
+            </Principal>
+            <Dependent Role="Haracteristiki">
+              <PropertyRef Name="Id_tipa_complect" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hatacteristiki_PO_PO">
+          <End Role="PO" Type="Self.PO" Multiplicity="1" />
+          <End Role="Hatacteristiki_PO" Type="Self.Hatacteristiki_PO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PO">
+              <PropertyRef Name="Id_PO" />
+            </Principal>
+            <Dependent Role="Hatacteristiki_PO">
+              <PropertyRef Name="Id_PO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hatacteristiki_PO_Tipi_oborud">
+          <End Role="Tipi_oborud" Type="Self.Tipi_oborud" Multiplicity="1" />
+          <End Role="Hatacteristiki_PO" Type="Self.Hatacteristiki_PO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipi_oborud">
+              <PropertyRef Name="Id_tipa_oborud" />
+            </Principal>
+            <Dependent Role="Hatacteristiki_PO">
+              <PropertyRef Name="Id_oborud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hatacteristiki_PO_Tipi_PO1">
+          <End Role="Tipi_PO" Type="Self.Tipi_PO" Multiplicity="1" />
+          <End Role="Hatacteristiki_PO" Type="Self.Hatacteristiki_PO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipi_PO">
+              <PropertyRef Name="Id_tipa_PO" />
+            </Principal>
+            <Dependent Role="Hatacteristiki_PO">
+              <PropertyRef Name="Id_tipa_PO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Oborudovanie_Otdeli">
+          <End Role="Otdeli" Type="Self.Otdeli" Multiplicity="1" />
+          <End Role="Oborudovanie" Type="Self.Oborudovanie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Otdeli">
+              <PropertyRef Name="Id_otdela" />
+            </Principal>
+            <Dependent Role="Oborudovanie">
+              <PropertyRef Name="Id_otdela" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Oborudovanie_Sotrudniki">
+          <End Role="Sotrudniki" Type="Self.Sotrudniki" Multiplicity="1" />
+          <End Role="Oborudovanie" Type="Self.Oborudovanie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sotrudniki">
+              <PropertyRef Name="Id_sotrud" />
+            </Principal>
+            <Dependent Role="Oborudovanie">
+              <PropertyRef Name="Id_Sotrud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Oborudovanie_Tipi_oborud">
+          <End Role="Tipi_oborud" Type="Self.Tipi_oborud" Multiplicity="1" />
+          <End Role="Oborudovanie" Type="Self.Oborudovanie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipi_oborud">
+              <PropertyRef Name="Id_tipa_oborud" />
+            </Principal>
+            <Dependent Role="Oborudovanie">
+              <PropertyRef Name="Id_tipa_oborud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Odsujd_zayavki_Sotrudniki">
+          <End Role="Sotrudniki" Type="Self.Sotrudniki" Multiplicity="1" />
+          <End Role="Odsujd_zayavki" Type="Self.Odsujd_zayavki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sotrudniki">
+              <PropertyRef Name="Id_sotrud" />
+            </Principal>
+            <Dependent Role="Odsujd_zayavki">
+              <PropertyRef Name="Id_kem_soversh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Odsujd_zayavki_Sotrudniki1">
+          <End Role="Sotrudniki" Type="Self.Sotrudniki" Multiplicity="1" />
+          <End Role="Odsujd_zayavki" Type="Self.Odsujd_zayavki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sotrudniki">
+              <PropertyRef Name="Id_sotrud" />
+            </Principal>
+            <Dependent Role="Odsujd_zayavki">
+              <PropertyRef Name="Id_komu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Odsujd_zayavki_Zayavki">
+          <End Role="Zayavki" Type="Self.Zayavki" Multiplicity="1" />
+          <End Role="Odsujd_zayavki" Type="Self.Odsujd_zayavki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zayavki">
+              <PropertyRef Name="Id_zayavki" />
+            </Principal>
+            <Dependent Role="Odsujd_zayavki">
+              <PropertyRef Name="Id_zayavki" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PO_Tipi_PO1">
+          <End Role="Tipi_PO" Type="Self.Tipi_PO" Multiplicity="1" />
+          <End Role="PO" Type="Self.PO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipi_PO">
+              <PropertyRef Name="Id_tipa_PO" />
+            </Principal>
+            <Dependent Role="PO">
+              <PropertyRef Name="Id_tipa_PO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sklade_Firmi">
+          <End Role="Firmi" Type="Self.Firmi" Multiplicity="1" />
+          <End Role="Sklade" Type="Self.Sklade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Firmi">
+              <PropertyRef Name="Id_firmi" />
+            </Principal>
+            <Dependent Role="Sklade">
+              <PropertyRef Name="Id_firmi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sklade_Tipi_complect">
+          <End Role="Tipi_complect" Type="Self.Tipi_complect" Multiplicity="1" />
+          <End Role="Sklade" Type="Self.Sklade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipi_complect">
+              <PropertyRef Name="Id_tipa_complect" />
+            </Principal>
+            <Dependent Role="Sklade">
+              <PropertyRef Name="Id_tipa_complect" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sotrudniki_Doljnosti">
+          <End Role="Doljnosti" Type="Self.Doljnosti" Multiplicity="1" />
+          <End Role="Sotrudniki" Type="Self.Sotrudniki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doljnosti">
+              <PropertyRef Name="Id_doljnosti" />
+            </Principal>
+            <Dependent Role="Sotrudniki">
+              <PropertyRef Name="Id_doljnosti" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sotrudniki_Otdeli">
+          <End Role="Otdeli" Type="Self.Otdeli" Multiplicity="1" />
+          <End Role="Sotrudniki" Type="Self.Sotrudniki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Otdeli">
+              <PropertyRef Name="Id_otdela" />
+            </Principal>
+            <Dependent Role="Sotrudniki">
+              <PropertyRef Name="Id_otdela" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sotrudniki_Role_Sotrudniki">
+          <End Role="Role_Sotrudniki" Type="Self.Role_Sotrudniki" Multiplicity="1" />
+          <End Role="Sotrudniki" Type="Self.Sotrudniki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role_Sotrudniki">
+              <PropertyRef Name="Id_Role" />
+            </Principal>
+            <Dependent Role="Sotrudniki">
+              <PropertyRef Name="Id_role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zayavki_Otdeli">
+          <End Role="Otdeli" Type="Self.Otdeli" Multiplicity="1" />
+          <End Role="Zayavki" Type="Self.Zayavki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Otdeli">
+              <PropertyRef Name="Id_otdela" />
+            </Principal>
+            <Dependent Role="Zayavki">
+              <PropertyRef Name="Id_otdela" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zayavki_PO">
+          <End Role="PO" Type="Self.PO" Multiplicity="1" />
+          <End Role="Zayavki" Type="Self.Zayavki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PO">
+              <PropertyRef Name="Id_PO" />
+            </Principal>
+            <Dependent Role="Zayavki">
+              <PropertyRef Name="Id_PO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zayavki_Sotrudniki">
+          <End Role="Sotrudniki" Type="Self.Sotrudniki" Multiplicity="1" />
+          <End Role="Zayavki" Type="Self.Zayavki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sotrudniki">
+              <PropertyRef Name="Id_sotrud" />
+            </Principal>
+            <Dependent Role="Zayavki">
+              <PropertyRef Name="Id_sotrud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zayavki_Temi_zayavok">
+          <End Role="Temi_zayavok" Type="Self.Temi_zayavok" Multiplicity="1" />
+          <End Role="Zayavki" Type="Self.Zayavki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Temi_zayavok">
+              <PropertyRef Name="Id_temi_zayavi" />
+            </Principal>
+            <Dependent Role="Zayavki">
+              <PropertyRef Name="Id_temi_zayavki" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zayavki_Tipi_PO">
+          <End Role="Tipi_PO" Type="Self.Tipi_PO" Multiplicity="1" />
+          <End Role="Zayavki" Type="Self.Zayavki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipi_PO">
+              <PropertyRef Name="Id_tipa_PO" />
+            </Principal>
+            <Dependent Role="Zayavki">
+              <PropertyRef Name="Id_tipa_PO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище BD_Diplom_PisarevModelContainer">
+          <EntitySet Name="Complect_oborud" EntityType="Self.Complect_oborud" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Doljnosti" EntityType="Self.Doljnosti" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Firmi" EntityType="Self.Firmi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Haracteristiki" EntityType="Self.Haracteristiki" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Haracteristiki_Complect" EntityType="Self.Haracteristiki_Complect" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hatacteristiki_PO" EntityType="Self.Hatacteristiki_PO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Oborudovanie" EntityType="Self.Oborudovanie" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Odsujd_zayavki" EntityType="Self.Odsujd_zayavki" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Otdeli" EntityType="Self.Otdeli" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PO" EntityType="Self.PO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role_Sotrudniki" EntityType="Self.Role_Sotrudniki" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sklade" EntityType="Self.Sklade" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sotrudniki" EntityType="Self.Sotrudniki" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Temi_zayavok" EntityType="Self.Temi_zayavok" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tipi_complect" EntityType="Self.Tipi_complect" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tipi_oborud" EntityType="Self.Tipi_oborud" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tipi_PO" EntityType="Self.Tipi_PO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Zayavki" EntityType="Self.Zayavki" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Complect_oborud_Firmi" Association="Self.FK_Complect_oborud_Firmi">
+            <End Role="Firmi" EntitySet="Firmi" />
+            <End Role="Complect_oborud" EntitySet="Complect_oborud" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Complect_oborud_Oborudovanie" Association="Self.FK_Complect_oborud_Oborudovanie">
+            <End Role="Oborudovanie" EntitySet="Oborudovanie" />
+            <End Role="Complect_oborud" EntitySet="Complect_oborud" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Complect_oborud_Sklade" Association="Self.FK_Complect_oborud_Sklade">
+            <End Role="Sklade" EntitySet="Sklade" />
+            <End Role="Complect_oborud" EntitySet="Complect_oborud" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Complect_oborud_Tipi_complect" Association="Self.FK_Complect_oborud_Tipi_complect">
+            <End Role="Tipi_complect" EntitySet="Tipi_complect" />
+            <End Role="Complect_oborud" EntitySet="Complect_oborud" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Haracteristiki_Complect_Haracteristiki" Association="Self.FK_Haracteristiki_Complect_Haracteristiki">
+            <End Role="Haracteristiki" EntitySet="Haracteristiki" />
+            <End Role="Haracteristiki_Complect" EntitySet="Haracteristiki_Complect" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Haracteristiki_Tipi_complect" Association="Self.FK_Haracteristiki_Tipi_complect">
+            <End Role="Tipi_complect" EntitySet="Tipi_complect" />
+            <End Role="Haracteristiki" EntitySet="Haracteristiki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hatacteristiki_PO_PO" Association="Self.FK_Hatacteristiki_PO_PO">
+            <End Role="PO" EntitySet="PO" />
+            <End Role="Hatacteristiki_PO" EntitySet="Hatacteristiki_PO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hatacteristiki_PO_Tipi_oborud" Association="Self.FK_Hatacteristiki_PO_Tipi_oborud">
+            <End Role="Tipi_oborud" EntitySet="Tipi_oborud" />
+            <End Role="Hatacteristiki_PO" EntitySet="Hatacteristiki_PO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hatacteristiki_PO_Tipi_PO1" Association="Self.FK_Hatacteristiki_PO_Tipi_PO1">
+            <End Role="Tipi_PO" EntitySet="Tipi_PO" />
+            <End Role="Hatacteristiki_PO" EntitySet="Hatacteristiki_PO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Oborudovanie_Otdeli" Association="Self.FK_Oborudovanie_Otdeli">
+            <End Role="Otdeli" EntitySet="Otdeli" />
+            <End Role="Oborudovanie" EntitySet="Oborudovanie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Oborudovanie_Sotrudniki" Association="Self.FK_Oborudovanie_Sotrudniki">
+            <End Role="Sotrudniki" EntitySet="Sotrudniki" />
+            <End Role="Oborudovanie" EntitySet="Oborudovanie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Oborudovanie_Tipi_oborud" Association="Self.FK_Oborudovanie_Tipi_oborud">
+            <End Role="Tipi_oborud" EntitySet="Tipi_oborud" />
+            <End Role="Oborudovanie" EntitySet="Oborudovanie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Odsujd_zayavki_Sotrudniki" Association="Self.FK_Odsujd_zayavki_Sotrudniki">
+            <End Role="Sotrudniki" EntitySet="Sotrudniki" />
+            <End Role="Odsujd_zayavki" EntitySet="Odsujd_zayavki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Odsujd_zayavki_Sotrudniki1" Association="Self.FK_Odsujd_zayavki_Sotrudniki1">
+            <End Role="Sotrudniki" EntitySet="Sotrudniki" />
+            <End Role="Odsujd_zayavki" EntitySet="Odsujd_zayavki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Odsujd_zayavki_Zayavki" Association="Self.FK_Odsujd_zayavki_Zayavki">
+            <End Role="Zayavki" EntitySet="Zayavki" />
+            <End Role="Odsujd_zayavki" EntitySet="Odsujd_zayavki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PO_Tipi_PO1" Association="Self.FK_PO_Tipi_PO1">
+            <End Role="Tipi_PO" EntitySet="Tipi_PO" />
+            <End Role="PO" EntitySet="PO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sklade_Firmi" Association="Self.FK_Sklade_Firmi">
+            <End Role="Firmi" EntitySet="Firmi" />
+            <End Role="Sklade" EntitySet="Sklade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sklade_Tipi_complect" Association="Self.FK_Sklade_Tipi_complect">
+            <End Role="Tipi_complect" EntitySet="Tipi_complect" />
+            <End Role="Sklade" EntitySet="Sklade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sotrudniki_Doljnosti" Association="Self.FK_Sotrudniki_Doljnosti">
+            <End Role="Doljnosti" EntitySet="Doljnosti" />
+            <End Role="Sotrudniki" EntitySet="Sotrudniki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sotrudniki_Otdeli" Association="Self.FK_Sotrudniki_Otdeli">
+            <End Role="Otdeli" EntitySet="Otdeli" />
+            <End Role="Sotrudniki" EntitySet="Sotrudniki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sotrudniki_Role_Sotrudniki" Association="Self.FK_Sotrudniki_Role_Sotrudniki">
+            <End Role="Role_Sotrudniki" EntitySet="Role_Sotrudniki" />
+            <End Role="Sotrudniki" EntitySet="Sotrudniki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zayavki_Otdeli" Association="Self.FK_Zayavki_Otdeli">
+            <End Role="Otdeli" EntitySet="Otdeli" />
+            <End Role="Zayavki" EntitySet="Zayavki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zayavki_PO" Association="Self.FK_Zayavki_PO">
+            <End Role="PO" EntitySet="PO" />
+            <End Role="Zayavki" EntitySet="Zayavki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zayavki_Sotrudniki" Association="Self.FK_Zayavki_Sotrudniki">
+            <End Role="Sotrudniki" EntitySet="Sotrudniki" />
+            <End Role="Zayavki" EntitySet="Zayavki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zayavki_Temi_zayavok" Association="Self.FK_Zayavki_Temi_zayavok">
+            <End Role="Temi_zayavok" EntitySet="Temi_zayavok" />
+            <End Role="Zayavki" EntitySet="Zayavki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zayavki_Tipi_PO" Association="Self.FK_Zayavki_Tipi_PO">
+            <End Role="Tipi_PO" EntitySet="Tipi_PO" />
+            <End Role="Zayavki" EntitySet="Zayavki" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BD_Diplom_PisarevModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Complect_oborud">
+          <Key>
+            <PropertyRef Name="Id_complect" />
+          </Key>
+          <Property Name="Id_complect" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_oborud" Type="Int32" Nullable="false" />
+          <Property Name="Id_tipa_complect" Type="Int32" Nullable="false" />
+          <Property Name="Id_firmi" Type="Int32" Nullable="false" />
+          <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Id_sklad" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Firmi" Relationship="Self.FK_Complect_oborud_Firmi" FromRole="Complect_oborud" ToRole="Firmi" />
+          <NavigationProperty Name="Oborudovanie" Relationship="Self.FK_Complect_oborud_Oborudovanie" FromRole="Complect_oborud" ToRole="Oborudovanie" />
+          <NavigationProperty Name="Sklade" Relationship="Self.FK_Complect_oborud_Sklade" FromRole="Complect_oborud" ToRole="Sklade" />
+          <NavigationProperty Name="Tipi_complect" Relationship="Self.FK_Complect_oborud_Tipi_complect" FromRole="Complect_oborud" ToRole="Tipi_complect" />
+        </EntityType>
+        <EntityType Name="Doljnosti">
+          <Key>
+            <PropertyRef Name="Id_doljnosti" />
+          </Key>
+          <Property Name="Id_doljnosti" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazvanie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Sotrudniki" Relationship="Self.FK_Sotrudniki_Doljnosti" FromRole="Doljnosti" ToRole="Sotrudniki" />
+        </EntityType>
+        <EntityType Name="Firmi">
+          <Key>
+            <PropertyRef Name="Id_firmi" />
+          </Key>
+          <Property Name="Id_firmi" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazvanie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Complect_oborud" Relationship="Self.FK_Complect_oborud_Firmi" FromRole="Firmi" ToRole="Complect_oborud" />
+          <NavigationProperty Name="Sklade" Relationship="Self.FK_Sklade_Firmi" FromRole="Firmi" ToRole="Sklade" />
+        </EntityType>
+        <EntityType Name="Haracteristiki">
+          <Key>
+            <PropertyRef Name="Id_Haracteristiki" />
+          </Key>
+          <Property Name="Id_Haracteristiki" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazvanie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Id_tipa_complect" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Haracteristiki_Complect" Relationship="Self.FK_Haracteristiki_Complect_Haracteristiki" FromRole="Haracteristiki" ToRole="Haracteristiki_Complect" />
+          <NavigationProperty Name="Tipi_complect" Relationship="Self.FK_Haracteristiki_Tipi_complect" FromRole="Haracteristiki" ToRole="Tipi_complect" />
+        </EntityType>
+        <EntityType Name="Haracteristiki_Complect">
+          <Key>
+            <PropertyRef Name="Id_haracter_compl" />
+          </Key>
+          <Property Name="Id_haracter_compl" Type="Int32" Nullable="false" />
+          <Property Name="Id_complect" Type="Int32" Nullable="false" />
+          <Property Name="Id_haracteristiki" Type="Int32" Nullable="false" />
+          <Property Name="Znahenie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Id_topa_complect" Type="Int32" Nullable="false" />
+          <Property Name="Id_Sklad" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Haracteristiki" Relationship="Self.FK_Haracteristiki_Complect_Haracteristiki" FromRole="Haracteristiki_Complect" ToRole="Haracteristiki" />
+        </EntityType>
+        <EntityType Name="Hatacteristiki_PO">
+          <Key>
+            <PropertyRef Name="Id_harakt_PO" />
+          </Key>
+          <Property Name="Id_harakt_PO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_tipa_PO" Type="Int32" Nullable="false" />
+          <Property Name="Id_PO" Type="Int32" Nullable="false" />
+          <Property Name="Data_ustanovki" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Data_posled_obnovl" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Id_oborud" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PO" Relationship="Self.FK_Hatacteristiki_PO_PO" FromRole="Hatacteristiki_PO" ToRole="PO" />
+          <NavigationProperty Name="Tipi_oborud" Relationship="Self.FK_Hatacteristiki_PO_Tipi_oborud" FromRole="Hatacteristiki_PO" ToRole="Tipi_oborud" />
+          <NavigationProperty Name="Tipi_PO" Relationship="Self.FK_Hatacteristiki_PO_Tipi_PO1" FromRole="Hatacteristiki_PO" ToRole="Tipi_PO" />
+        </EntityType>
+        <EntityType Name="Oborudovanie">
+          <Key>
+            <PropertyRef Name="Id_oborud" />
+          </Key>
+          <Property Name="Id_oborud" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_tipa_oborud" Type="Int32" Nullable="false" />
+          <Property Name="Id_Sotrud" Type="Int32" Nullable="false" />
+          <Property Name="Id_otdela" Type="Int32" Nullable="false" />
+          <Property Name="imya_oborud" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ip_adres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Complect_oborud" Relationship="Self.FK_Complect_oborud_Oborudovanie" FromRole="Oborudovanie" ToRole="Complect_oborud" />
+          <NavigationProperty Name="Otdeli" Relationship="Self.FK_Oborudovanie_Otdeli" FromRole="Oborudovanie" ToRole="Otdeli" />
+          <NavigationProperty Name="Sotrudniki" Relationship="Self.FK_Oborudovanie_Sotrudniki" FromRole="Oborudovanie" ToRole="Sotrudniki" />
+          <NavigationProperty Name="Tipi_oborud" Relationship="Self.FK_Oborudovanie_Tipi_oborud" FromRole="Oborudovanie" ToRole="Tipi_oborud" />
+        </EntityType>
+        <EntityType Name="Odsujd_zayavki">
+          <Key>
+            <PropertyRef Name="Id_obsujd" />
+          </Key>
+          <Property Name="Id_obsujd" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_zayavki" Type="Int32" Nullable="false" />
+          <Property Name="Data_vramya" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Kommentarij" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Id_kem_soversh" Type="Int32" Nullable="false" />
+          <Property Name="Id_komu" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Sotrudniki" Relationship="Self.FK_Odsujd_zayavki_Sotrudniki" FromRole="Odsujd_zayavki" ToRole="Sotrudniki" />
+          <NavigationProperty Name="Sotrudniki1" Relationship="Self.FK_Odsujd_zayavki_Sotrudniki1" FromRole="Odsujd_zayavki" ToRole="Sotrudniki" />
+          <NavigationProperty Name="Zayavki" Relationship="Self.FK_Odsujd_zayavki_Zayavki" FromRole="Odsujd_zayavki" ToRole="Zayavki" />
+        </EntityType>
+        <EntityType Name="Otdeli">
+          <Key>
+            <PropertyRef Name="Id_otdela" />
+          </Key>
+          <Property Name="Id_otdela" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazvanie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Oborudovanie" Relationship="Self.FK_Oborudovanie_Otdeli" FromRole="Otdeli" ToRole="Oborudovanie" />
+          <NavigationProperty Name="Sotrudniki" Relationship="Self.FK_Sotrudniki_Otdeli" FromRole="Otdeli" ToRole="Sotrudniki" />
+          <NavigationProperty Name="Zayavki" Relationship="Self.FK_Zayavki_Otdeli" FromRole="Otdeli" ToRole="Zayavki" />
+        </EntityType>
+        <EntityType Name="PO">
+          <Key>
+            <PropertyRef Name="Id_PO" />
+          </Key>
+          <Property Name="Id_PO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_tipa_PO" Type="Int32" Nullable="false" />
+          <Property Name="Nazvanie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Srok_dejstviya" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Hatacteristiki_PO" Relationship="Self.FK_Hatacteristiki_PO_PO" FromRole="PO" ToRole="Hatacteristiki_PO" />
+          <NavigationProperty Name="Tipi_PO" Relationship="Self.FK_PO_Tipi_PO1" FromRole="PO" ToRole="Tipi_PO" />
+          <NavigationProperty Name="Zayavki" Relationship="Self.FK_Zayavki_PO" FromRole="PO" ToRole="Zayavki" />
+        </EntityType>
+        <EntityType Name="Role_Sotrudniki">
+          <Key>
+            <PropertyRef Name="Id_Role" />
+          </Key>
+          <Property Name="Id_Role" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazvanie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Sotrudniki" Relationship="Self.FK_Sotrudniki_Role_Sotrudniki" FromRole="Role_Sotrudniki" ToRole="Sotrudniki" />
+        </EntityType>
+        <EntityType Name="Sklade">
+          <Key>
+            <PropertyRef Name="Id_Sklad" />
+          </Key>
+          <Property Name="Id_Sklad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_tipa_complect" Type="Int32" Nullable="false" />
+          <Property Name="Id_firmi" Type="Int32" Nullable="false" />
+          <Property Name="model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Vsego" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Complect_oborud" Relationship="Self.FK_Complect_oborud_Sklade" FromRole="Sklade" ToRole="Complect_oborud" />
+          <NavigationProperty Name="Firmi" Relationship="Self.FK_Sklade_Firmi" FromRole="Sklade" ToRole="Firmi" />
+          <NavigationProperty Name="Tipi_complect" Relationship="Self.FK_Sklade_Tipi_complect" FromRole="Sklade" ToRole="Tipi_complect" />
+        </EntityType>
+        <EntityType Name="Sotrudniki">
+          <Key>
+            <PropertyRef Name="Id_sotrud" />
+          </Key>
+          <Property Name="Id_sotrud" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FIO" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Id_otdela" Type="Int32" Nullable="false" />
+          <Property Name="Id_doljnosti" Type="Int32" Nullable="false" />
+          <Property Name="DR" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Adres" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="e_mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Kommentatij" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="role" Type="Int32" Nullable="false" />
+          <Property Name="Id_role" Type="Int32" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Doljnosti" Relationship="Self.FK_Sotrudniki_Doljnosti" FromRole="Sotrudniki" ToRole="Doljnosti" />
+          <NavigationProperty Name="Oborudovanie" Relationship="Self.FK_Oborudovanie_Sotrudniki" FromRole="Sotrudniki" ToRole="Oborudovanie" />
+          <NavigationProperty Name="Odsujd_zayavki" Relationship="Self.FK_Odsujd_zayavki_Sotrudniki" FromRole="Sotrudniki" ToRole="Odsujd_zayavki" />
+          <NavigationProperty Name="Odsujd_zayavki1" Relationship="Self.FK_Odsujd_zayavki_Sotrudniki1" FromRole="Sotrudniki" ToRole="Odsujd_zayavki" />
+          <NavigationProperty Name="Otdeli" Relationship="Self.FK_Sotrudniki_Otdeli" FromRole="Sotrudniki" ToRole="Otdeli" />
+          <NavigationProperty Name="Role_Sotrudniki" Relationship="Self.FK_Sotrudniki_Role_Sotrudniki" FromRole="Sotrudniki" ToRole="Role_Sotrudniki" />
+          <NavigationProperty Name="Zayavki" Relationship="Self.FK_Zayavki_Sotrudniki" FromRole="Sotrudniki" ToRole="Zayavki" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Temi_zayavok">
+          <Key>
+            <PropertyRef Name="Id_temi_zayavi" />
+          </Key>
+          <Property Name="Id_temi_zayavi" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazvanie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Zayavki" Relationship="Self.FK_Zayavki_Temi_zayavok" FromRole="Temi_zayavok" ToRole="Zayavki" />
+        </EntityType>
+        <EntityType Name="Tipi_complect">
+          <Key>
+            <PropertyRef Name="Id_tipa_complect" />
+          </Key>
+          <Property Name="Id_tipa_complect" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazvanie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Complect_oborud" Relationship="Self.FK_Complect_oborud_Tipi_complect" FromRole="Tipi_complect" ToRole="Complect_oborud" />
+          <NavigationProperty Name="Haracteristiki" Relationship="Self.FK_Haracteristiki_Tipi_complect" FromRole="Tipi_complect" ToRole="Haracteristiki" />
+          <NavigationProperty Name="Sklade" Relationship="Self.FK_Sklade_Tipi_complect" FromRole="Tipi_complect" ToRole="Sklade" />
+        </EntityType>
+        <EntityType Name="Tipi_oborud">
+          <Key>
+            <PropertyRef Name="Id_tipa_oborud" />
+          </Key>
+          <Property Name="Id_tipa_oborud" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazvanie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Hatacteristiki_PO" Relationship="Self.FK_Hatacteristiki_PO_Tipi_oborud" FromRole="Tipi_oborud" ToRole="Hatacteristiki_PO" />
+          <NavigationProperty Name="Oborudovanie" Relationship="Self.FK_Oborudovanie_Tipi_oborud" FromRole="Tipi_oborud" ToRole="Oborudovanie" />
+        </EntityType>
+        <EntityType Name="Tipi_PO">
+          <Key>
+            <PropertyRef Name="Id_tipa_PO" />
+          </Key>
+          <Property Name="Id_tipa_PO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazvanie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Hatacteristiki_PO" Relationship="Self.FK_Hatacteristiki_PO_Tipi_PO1" FromRole="Tipi_PO" ToRole="Hatacteristiki_PO" />
+          <NavigationProperty Name="PO" Relationship="Self.FK_PO_Tipi_PO1" FromRole="Tipi_PO" ToRole="PO" />
+          <NavigationProperty Name="Zayavki" Relationship="Self.FK_Zayavki_Tipi_PO" FromRole="Tipi_PO" ToRole="Zayavki" />
+        </EntityType>
+        <EntityType Name="Zayavki">
+          <Key>
+            <PropertyRef Name="Id_zayavki" />
+          </Key>
+          <Property Name="Id_zayavki" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_sotrud" Type="Int32" Nullable="false" />
+          <Property Name="Id_otdela" Type="Int32" Nullable="false" />
+          <Property Name="Data" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Data_zaversh" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Id_sotrud_teh" Type="Int32" Nullable="false" />
+          <Property Name="Id_temi_zayavki" Type="Int32" Nullable="false" />
+          <Property Name="Vajnost" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Statys" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Sostoyanie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Id_tipa_PO" Type="Int32" Nullable="false" />
+          <Property Name="Id_PO" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Odsujd_zayavki" Relationship="Self.FK_Odsujd_zayavki_Zayavki" FromRole="Zayavki" ToRole="Odsujd_zayavki" />
+          <NavigationProperty Name="Otdeli" Relationship="Self.FK_Zayavki_Otdeli" FromRole="Zayavki" ToRole="Otdeli" />
+          <NavigationProperty Name="PO" Relationship="Self.FK_Zayavki_PO" FromRole="Zayavki" ToRole="PO" />
+          <NavigationProperty Name="Sotrudniki" Relationship="Self.FK_Zayavki_Sotrudniki" FromRole="Zayavki" ToRole="Sotrudniki" />
+          <NavigationProperty Name="Temi_zayavok" Relationship="Self.FK_Zayavki_Temi_zayavok" FromRole="Zayavki" ToRole="Temi_zayavok" />
+          <NavigationProperty Name="Tipi_PO" Relationship="Self.FK_Zayavki_Tipi_PO" FromRole="Zayavki" ToRole="Tipi_PO" />
+        </EntityType>
+        <Association Name="FK_Complect_oborud_Firmi">
+          <End Role="Firmi" Type="Self.Firmi" Multiplicity="1" />
+          <End Role="Complect_oborud" Type="Self.Complect_oborud" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Firmi">
+              <PropertyRef Name="Id_firmi" />
+            </Principal>
+            <Dependent Role="Complect_oborud">
+              <PropertyRef Name="Id_firmi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Complect_oborud_Oborudovanie">
+          <End Role="Oborudovanie" Type="Self.Oborudovanie" Multiplicity="1" />
+          <End Role="Complect_oborud" Type="Self.Complect_oborud" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Oborudovanie">
+              <PropertyRef Name="Id_oborud" />
+            </Principal>
+            <Dependent Role="Complect_oborud">
+              <PropertyRef Name="Id_oborud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Complect_oborud_Sklade">
+          <End Role="Sklade" Type="Self.Sklade" Multiplicity="1" />
+          <End Role="Complect_oborud" Type="Self.Complect_oborud" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sklade">
+              <PropertyRef Name="Id_Sklad" />
+            </Principal>
+            <Dependent Role="Complect_oborud">
+              <PropertyRef Name="Id_sklad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Complect_oborud_Tipi_complect">
+          <End Role="Tipi_complect" Type="Self.Tipi_complect" Multiplicity="1" />
+          <End Role="Complect_oborud" Type="Self.Complect_oborud" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipi_complect">
+              <PropertyRef Name="Id_tipa_complect" />
+            </Principal>
+            <Dependent Role="Complect_oborud">
+              <PropertyRef Name="Id_tipa_complect" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sotrudniki_Doljnosti">
+          <End Role="Doljnosti" Type="Self.Doljnosti" Multiplicity="1" />
+          <End Role="Sotrudniki" Type="Self.Sotrudniki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doljnosti">
+              <PropertyRef Name="Id_doljnosti" />
+            </Principal>
+            <Dependent Role="Sotrudniki">
+              <PropertyRef Name="Id_doljnosti" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sklade_Firmi">
+          <End Role="Firmi" Type="Self.Firmi" Multiplicity="1" />
+          <End Role="Sklade" Type="Self.Sklade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Firmi">
+              <PropertyRef Name="Id_firmi" />
+            </Principal>
+            <Dependent Role="Sklade">
+              <PropertyRef Name="Id_firmi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Haracteristiki_Complect_Haracteristiki">
+          <End Role="Haracteristiki" Type="Self.Haracteristiki" Multiplicity="1" />
+          <End Role="Haracteristiki_Complect" Type="Self.Haracteristiki_Complect" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Haracteristiki">
+              <PropertyRef Name="Id_Haracteristiki" />
+            </Principal>
+            <Dependent Role="Haracteristiki_Complect">
+              <PropertyRef Name="Id_haracteristiki" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Haracteristiki_Tipi_complect">
+          <End Role="Tipi_complect" Type="Self.Tipi_complect" Multiplicity="1" />
+          <End Role="Haracteristiki" Type="Self.Haracteristiki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipi_complect">
+              <PropertyRef Name="Id_tipa_complect" />
+            </Principal>
+            <Dependent Role="Haracteristiki">
+              <PropertyRef Name="Id_tipa_complect" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hatacteristiki_PO_PO">
+          <End Role="PO" Type="Self.PO" Multiplicity="1" />
+          <End Role="Hatacteristiki_PO" Type="Self.Hatacteristiki_PO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PO">
+              <PropertyRef Name="Id_PO" />
+            </Principal>
+            <Dependent Role="Hatacteristiki_PO">
+              <PropertyRef Name="Id_PO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hatacteristiki_PO_Tipi_oborud">
+          <End Role="Tipi_oborud" Type="Self.Tipi_oborud" Multiplicity="1" />
+          <End Role="Hatacteristiki_PO" Type="Self.Hatacteristiki_PO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipi_oborud">
+              <PropertyRef Name="Id_tipa_oborud" />
+            </Principal>
+            <Dependent Role="Hatacteristiki_PO">
+              <PropertyRef Name="Id_oborud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hatacteristiki_PO_Tipi_PO1">
+          <End Role="Tipi_PO" Type="Self.Tipi_PO" Multiplicity="1" />
+          <End Role="Hatacteristiki_PO" Type="Self.Hatacteristiki_PO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipi_PO">
+              <PropertyRef Name="Id_tipa_PO" />
+            </Principal>
+            <Dependent Role="Hatacteristiki_PO">
+              <PropertyRef Name="Id_tipa_PO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Oborudovanie_Otdeli">
+          <End Role="Otdeli" Type="Self.Otdeli" Multiplicity="1" />
+          <End Role="Oborudovanie" Type="Self.Oborudovanie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Otdeli">
+              <PropertyRef Name="Id_otdela" />
+            </Principal>
+            <Dependent Role="Oborudovanie">
+              <PropertyRef Name="Id_otdela" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Oborudovanie_Sotrudniki">
+          <End Role="Sotrudniki" Type="Self.Sotrudniki" Multiplicity="1" />
+          <End Role="Oborudovanie" Type="Self.Oborudovanie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sotrudniki">
+              <PropertyRef Name="Id_sotrud" />
+            </Principal>
+            <Dependent Role="Oborudovanie">
+              <PropertyRef Name="Id_Sotrud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Oborudovanie_Tipi_oborud">
+          <End Role="Tipi_oborud" Type="Self.Tipi_oborud" Multiplicity="1" />
+          <End Role="Oborudovanie" Type="Self.Oborudovanie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipi_oborud">
+              <PropertyRef Name="Id_tipa_oborud" />
+            </Principal>
+            <Dependent Role="Oborudovanie">
+              <PropertyRef Name="Id_tipa_oborud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Odsujd_zayavki_Sotrudniki">
+          <End Role="Sotrudniki" Type="Self.Sotrudniki" Multiplicity="1" />
+          <End Role="Odsujd_zayavki" Type="Self.Odsujd_zayavki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sotrudniki">
+              <PropertyRef Name="Id_sotrud" />
+            </Principal>
+            <Dependent Role="Odsujd_zayavki">
+              <PropertyRef Name="Id_kem_soversh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Odsujd_zayavki_Sotrudniki1">
+          <End Role="Sotrudniki" Type="Self.Sotrudniki" Multiplicity="1" />
+          <End Role="Odsujd_zayavki" Type="Self.Odsujd_zayavki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sotrudniki">
+              <PropertyRef Name="Id_sotrud" />
+            </Principal>
+            <Dependent Role="Odsujd_zayavki">
+              <PropertyRef Name="Id_komu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Odsujd_zayavki_Zayavki">
+          <End Role="Zayavki" Type="Self.Zayavki" Multiplicity="1" />
+          <End Role="Odsujd_zayavki" Type="Self.Odsujd_zayavki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zayavki">
+              <PropertyRef Name="Id_zayavki" />
+            </Principal>
+            <Dependent Role="Odsujd_zayavki">
+              <PropertyRef Name="Id_zayavki" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sotrudniki_Otdeli">
+          <End Role="Otdeli" Type="Self.Otdeli" Multiplicity="1" />
+          <End Role="Sotrudniki" Type="Self.Sotrudniki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Otdeli">
+              <PropertyRef Name="Id_otdela" />
+            </Principal>
+            <Dependent Role="Sotrudniki">
+              <PropertyRef Name="Id_otdela" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zayavki_Otdeli">
+          <End Role="Otdeli" Type="Self.Otdeli" Multiplicity="1" />
+          <End Role="Zayavki" Type="Self.Zayavki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Otdeli">
+              <PropertyRef Name="Id_otdela" />
+            </Principal>
+            <Dependent Role="Zayavki">
+              <PropertyRef Name="Id_otdela" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PO_Tipi_PO1">
+          <End Role="Tipi_PO" Type="Self.Tipi_PO" Multiplicity="1" />
+          <End Role="PO" Type="Self.PO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipi_PO">
+              <PropertyRef Name="Id_tipa_PO" />
+            </Principal>
+            <Dependent Role="PO">
+              <PropertyRef Name="Id_tipa_PO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zayavki_PO">
+          <End Role="PO" Type="Self.PO" Multiplicity="1" />
+          <End Role="Zayavki" Type="Self.Zayavki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PO">
+              <PropertyRef Name="Id_PO" />
+            </Principal>
+            <Dependent Role="Zayavki">
+              <PropertyRef Name="Id_PO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sotrudniki_Role_Sotrudniki">
+          <End Role="Role_Sotrudniki" Type="Self.Role_Sotrudniki" Multiplicity="1" />
+          <End Role="Sotrudniki" Type="Self.Sotrudniki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role_Sotrudniki">
+              <PropertyRef Name="Id_Role" />
+            </Principal>
+            <Dependent Role="Sotrudniki">
+              <PropertyRef Name="Id_role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sklade_Tipi_complect">
+          <End Role="Tipi_complect" Type="Self.Tipi_complect" Multiplicity="1" />
+          <End Role="Sklade" Type="Self.Sklade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipi_complect">
+              <PropertyRef Name="Id_tipa_complect" />
+            </Principal>
+            <Dependent Role="Sklade">
+              <PropertyRef Name="Id_tipa_complect" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zayavki_Sotrudniki">
+          <End Role="Sotrudniki" Type="Self.Sotrudniki" Multiplicity="1" />
+          <End Role="Zayavki" Type="Self.Zayavki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sotrudniki">
+              <PropertyRef Name="Id_sotrud" />
+            </Principal>
+            <Dependent Role="Zayavki">
+              <PropertyRef Name="Id_sotrud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zayavki_Temi_zayavok">
+          <End Role="Temi_zayavok" Type="Self.Temi_zayavok" Multiplicity="1" />
+          <End Role="Zayavki" Type="Self.Zayavki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Temi_zayavok">
+              <PropertyRef Name="Id_temi_zayavi" />
+            </Principal>
+            <Dependent Role="Zayavki">
+              <PropertyRef Name="Id_temi_zayavki" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zayavki_Tipi_PO">
+          <End Role="Tipi_PO" Type="Self.Tipi_PO" Multiplicity="1" />
+          <End Role="Zayavki" Type="Self.Zayavki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipi_PO">
+              <PropertyRef Name="Id_tipa_PO" />
+            </Principal>
+            <Dependent Role="Zayavki">
+              <PropertyRef Name="Id_tipa_PO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BD_Diplom_PisarevEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Complect_oborud" EntityType="Self.Complect_oborud" />
+          <EntitySet Name="Doljnosti" EntityType="Self.Doljnosti" />
+          <EntitySet Name="Firmi" EntityType="Self.Firmi" />
+          <EntitySet Name="Haracteristiki" EntityType="Self.Haracteristiki" />
+          <EntitySet Name="Haracteristiki_Complect" EntityType="Self.Haracteristiki_Complect" />
+          <EntitySet Name="Hatacteristiki_PO" EntityType="Self.Hatacteristiki_PO" />
+          <EntitySet Name="Oborudovanie" EntityType="Self.Oborudovanie" />
+          <EntitySet Name="Odsujd_zayavki" EntityType="Self.Odsujd_zayavki" />
+          <EntitySet Name="Otdeli" EntityType="Self.Otdeli" />
+          <EntitySet Name="PO" EntityType="Self.PO" />
+          <EntitySet Name="Role_Sotrudniki" EntityType="Self.Role_Sotrudniki" />
+          <EntitySet Name="Sklade" EntityType="Self.Sklade" />
+          <EntitySet Name="Sotrudniki" EntityType="Self.Sotrudniki" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Temi_zayavok" EntityType="Self.Temi_zayavok" />
+          <EntitySet Name="Tipi_complect" EntityType="Self.Tipi_complect" />
+          <EntitySet Name="Tipi_oborud" EntityType="Self.Tipi_oborud" />
+          <EntitySet Name="Tipi_PO" EntityType="Self.Tipi_PO" />
+          <EntitySet Name="Zayavki" EntityType="Self.Zayavki" />
+          <AssociationSet Name="FK_Complect_oborud_Firmi" Association="Self.FK_Complect_oborud_Firmi">
+            <End Role="Firmi" EntitySet="Firmi" />
+            <End Role="Complect_oborud" EntitySet="Complect_oborud" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Complect_oborud_Oborudovanie" Association="Self.FK_Complect_oborud_Oborudovanie">
+            <End Role="Oborudovanie" EntitySet="Oborudovanie" />
+            <End Role="Complect_oborud" EntitySet="Complect_oborud" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Complect_oborud_Sklade" Association="Self.FK_Complect_oborud_Sklade">
+            <End Role="Sklade" EntitySet="Sklade" />
+            <End Role="Complect_oborud" EntitySet="Complect_oborud" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Complect_oborud_Tipi_complect" Association="Self.FK_Complect_oborud_Tipi_complect">
+            <End Role="Tipi_complect" EntitySet="Tipi_complect" />
+            <End Role="Complect_oborud" EntitySet="Complect_oborud" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sotrudniki_Doljnosti" Association="Self.FK_Sotrudniki_Doljnosti">
+            <End Role="Doljnosti" EntitySet="Doljnosti" />
+            <End Role="Sotrudniki" EntitySet="Sotrudniki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sklade_Firmi" Association="Self.FK_Sklade_Firmi">
+            <End Role="Firmi" EntitySet="Firmi" />
+            <End Role="Sklade" EntitySet="Sklade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Haracteristiki_Complect_Haracteristiki" Association="Self.FK_Haracteristiki_Complect_Haracteristiki">
+            <End Role="Haracteristiki" EntitySet="Haracteristiki" />
+            <End Role="Haracteristiki_Complect" EntitySet="Haracteristiki_Complect" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Haracteristiki_Tipi_complect" Association="Self.FK_Haracteristiki_Tipi_complect">
+            <End Role="Tipi_complect" EntitySet="Tipi_complect" />
+            <End Role="Haracteristiki" EntitySet="Haracteristiki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hatacteristiki_PO_PO" Association="Self.FK_Hatacteristiki_PO_PO">
+            <End Role="PO" EntitySet="PO" />
+            <End Role="Hatacteristiki_PO" EntitySet="Hatacteristiki_PO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hatacteristiki_PO_Tipi_oborud" Association="Self.FK_Hatacteristiki_PO_Tipi_oborud">
+            <End Role="Tipi_oborud" EntitySet="Tipi_oborud" />
+            <End Role="Hatacteristiki_PO" EntitySet="Hatacteristiki_PO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hatacteristiki_PO_Tipi_PO1" Association="Self.FK_Hatacteristiki_PO_Tipi_PO1">
+            <End Role="Tipi_PO" EntitySet="Tipi_PO" />
+            <End Role="Hatacteristiki_PO" EntitySet="Hatacteristiki_PO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Oborudovanie_Otdeli" Association="Self.FK_Oborudovanie_Otdeli">
+            <End Role="Otdeli" EntitySet="Otdeli" />
+            <End Role="Oborudovanie" EntitySet="Oborudovanie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Oborudovanie_Sotrudniki" Association="Self.FK_Oborudovanie_Sotrudniki">
+            <End Role="Sotrudniki" EntitySet="Sotrudniki" />
+            <End Role="Oborudovanie" EntitySet="Oborudovanie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Oborudovanie_Tipi_oborud" Association="Self.FK_Oborudovanie_Tipi_oborud">
+            <End Role="Tipi_oborud" EntitySet="Tipi_oborud" />
+            <End Role="Oborudovanie" EntitySet="Oborudovanie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Odsujd_zayavki_Sotrudniki" Association="Self.FK_Odsujd_zayavki_Sotrudniki">
+            <End Role="Sotrudniki" EntitySet="Sotrudniki" />
+            <End Role="Odsujd_zayavki" EntitySet="Odsujd_zayavki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Odsujd_zayavki_Sotrudniki1" Association="Self.FK_Odsujd_zayavki_Sotrudniki1">
+            <End Role="Sotrudniki" EntitySet="Sotrudniki" />
+            <End Role="Odsujd_zayavki" EntitySet="Odsujd_zayavki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Odsujd_zayavki_Zayavki" Association="Self.FK_Odsujd_zayavki_Zayavki">
+            <End Role="Zayavki" EntitySet="Zayavki" />
+            <End Role="Odsujd_zayavki" EntitySet="Odsujd_zayavki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sotrudniki_Otdeli" Association="Self.FK_Sotrudniki_Otdeli">
+            <End Role="Otdeli" EntitySet="Otdeli" />
+            <End Role="Sotrudniki" EntitySet="Sotrudniki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zayavki_Otdeli" Association="Self.FK_Zayavki_Otdeli">
+            <End Role="Otdeli" EntitySet="Otdeli" />
+            <End Role="Zayavki" EntitySet="Zayavki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PO_Tipi_PO1" Association="Self.FK_PO_Tipi_PO1">
+            <End Role="Tipi_PO" EntitySet="Tipi_PO" />
+            <End Role="PO" EntitySet="PO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zayavki_PO" Association="Self.FK_Zayavki_PO">
+            <End Role="PO" EntitySet="PO" />
+            <End Role="Zayavki" EntitySet="Zayavki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sotrudniki_Role_Sotrudniki" Association="Self.FK_Sotrudniki_Role_Sotrudniki">
+            <End Role="Role_Sotrudniki" EntitySet="Role_Sotrudniki" />
+            <End Role="Sotrudniki" EntitySet="Sotrudniki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sklade_Tipi_complect" Association="Self.FK_Sklade_Tipi_complect">
+            <End Role="Tipi_complect" EntitySet="Tipi_complect" />
+            <End Role="Sklade" EntitySet="Sklade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zayavki_Sotrudniki" Association="Self.FK_Zayavki_Sotrudniki">
+            <End Role="Sotrudniki" EntitySet="Sotrudniki" />
+            <End Role="Zayavki" EntitySet="Zayavki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zayavki_Temi_zayavok" Association="Self.FK_Zayavki_Temi_zayavok">
+            <End Role="Temi_zayavok" EntitySet="Temi_zayavok" />
+            <End Role="Zayavki" EntitySet="Zayavki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zayavki_Tipi_PO" Association="Self.FK_Zayavki_Tipi_PO">
+            <End Role="Tipi_PO" EntitySet="Tipi_PO" />
+            <End Role="Zayavki" EntitySet="Zayavki" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище BD_Diplom_PisarevModelContainer" CdmEntityContainer="BD_Diplom_PisarevEntities">
+          <EntitySetMapping Name="Complect_oborud">
+            <EntityTypeMapping TypeName="BD_Diplom_PisarevModel.Complect_oborud">
+              <MappingFragment StoreEntitySet="Complect_oborud">
+                <ScalarProperty Name="Id_complect" ColumnName="Id_complect" />
+                <ScalarProperty Name="Id_oborud" ColumnName="Id_oborud" />
+                <ScalarProperty Name="Id_tipa_complect" ColumnName="Id_tipa_complect" />
+                <ScalarProperty Name="Id_firmi" ColumnName="Id_firmi" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Id_sklad" ColumnName="Id_sklad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Doljnosti">
+            <EntityTypeMapping TypeName="BD_Diplom_PisarevModel.Doljnosti">
+              <MappingFragment StoreEntitySet="Doljnosti">
+                <ScalarProperty Name="Id_doljnosti" ColumnName="Id_doljnosti" />
+                <ScalarProperty Name="Nazvanie" ColumnName="Nazvanie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Firmi">
+            <EntityTypeMapping TypeName="BD_Diplom_PisarevModel.Firmi">
+              <MappingFragment StoreEntitySet="Firmi">
+                <ScalarProperty Name="Id_firmi" ColumnName="Id_firmi" />
+                <ScalarProperty Name="Nazvanie" ColumnName="Nazvanie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Haracteristiki">
+            <EntityTypeMapping TypeName="BD_Diplom_PisarevModel.Haracteristiki">
+              <MappingFragment StoreEntitySet="Haracteristiki">
+                <ScalarProperty Name="Id_Haracteristiki" ColumnName="Id_Haracteristiki" />
+                <ScalarProperty Name="Nazvanie" ColumnName="Nazvanie" />
+                <ScalarProperty Name="Id_tipa_complect" ColumnName="Id_tipa_complect" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Haracteristiki_Complect">
+            <EntityTypeMapping TypeName="BD_Diplom_PisarevModel.Haracteristiki_Complect">
+              <MappingFragment StoreEntitySet="Haracteristiki_Complect">
+                <ScalarProperty Name="Id_haracter_compl" ColumnName="Id_haracter_compl" />
+                <ScalarProperty Name="Id_complect" ColumnName="Id_complect" />
+                <ScalarProperty Name="Id_haracteristiki" ColumnName="Id_haracteristiki" />
+                <ScalarProperty Name="Znahenie" ColumnName="Znahenie" />
+                <ScalarProperty Name="Id_topa_complect" ColumnName="Id_topa_complect" />
+                <ScalarProperty Name="Id_Sklad" ColumnName="Id_Sklad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hatacteristiki_PO">
+            <EntityTypeMapping TypeName="BD_Diplom_PisarevModel.Hatacteristiki_PO">
+              <MappingFragment StoreEntitySet="Hatacteristiki_PO">
+                <ScalarProperty Name="Id_harakt_PO" ColumnName="Id_harakt_PO" />
+                <ScalarProperty Name="Id_tipa_PO" ColumnName="Id_tipa_PO" />
+                <ScalarProperty Name="Id_PO" ColumnName="Id_PO" />
+                <ScalarProperty Name="Data_ustanovki" ColumnName="Data_ustanovki" />
+                <ScalarProperty Name="Data_posled_obnovl" ColumnName="Data_posled_obnovl" />
+                <ScalarProperty Name="Id_oborud" ColumnName="Id_oborud" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Oborudovanie">
+            <EntityTypeMapping TypeName="BD_Diplom_PisarevModel.Oborudovanie">
+              <MappingFragment StoreEntitySet="Oborudovanie">
+                <ScalarProperty Name="Id_oborud" ColumnName="Id_oborud" />
+                <ScalarProperty Name="Id_tipa_oborud" ColumnName="Id_tipa_oborud" />
+                <ScalarProperty Name="Id_Sotrud" ColumnName="Id_Sotrud" />
+                <ScalarProperty Name="Id_otdela" ColumnName="Id_otdela" />
+                <ScalarProperty Name="imya_oborud" ColumnName="imya_oborud" />
+                <ScalarProperty Name="Ip_adres" ColumnName="Ip_adres" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Odsujd_zayavki">
+            <EntityTypeMapping TypeName="BD_Diplom_PisarevModel.Odsujd_zayavki">
+              <MappingFragment StoreEntitySet="Odsujd_zayavki">
+                <ScalarProperty Name="Id_obsujd" ColumnName="Id_obsujd" />
+                <ScalarProperty Name="Id_zayavki" ColumnName="Id_zayavki" />
+                <ScalarProperty Name="Data_vramya" ColumnName="Data_vramya" />
+                <ScalarProperty Name="Kommentarij" ColumnName="Kommentarij" />
+                <ScalarProperty Name="Id_kem_soversh" ColumnName="Id_kem_soversh" />
+                <ScalarProperty Name="Id_komu" ColumnName="Id_komu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Otdeli">
+            <EntityTypeMapping TypeName="BD_Diplom_PisarevModel.Otdeli">
+              <MappingFragment StoreEntitySet="Otdeli">
+                <ScalarProperty Name="Id_otdela" ColumnName="Id_otdela" />
+                <ScalarProperty Name="Nazvanie" ColumnName="Nazvanie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PO">
+            <EntityTypeMapping TypeName="BD_Diplom_PisarevModel.PO">
+              <MappingFragment StoreEntitySet="PO">
+                <ScalarProperty Name="Id_PO" ColumnName="Id_PO" />
+                <ScalarProperty Name="Id_tipa_PO" ColumnName="Id_tipa_PO" />
+                <ScalarProperty Name="Nazvanie" ColumnName="Nazvanie" />
+                <ScalarProperty Name="Srok_dejstviya" ColumnName="Srok_dejstviya" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role_Sotrudniki">
+            <EntityTypeMapping TypeName="BD_Diplom_PisarevModel.Role_Sotrudniki">
+              <MappingFragment StoreEntitySet="Role_Sotrudniki">
+                <ScalarProperty Name="Id_Role" ColumnName="Id_Role" />
+                <ScalarProperty Name="Nazvanie" ColumnName="Nazvanie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sklade">
+            <EntityTypeMapping TypeName="BD_Diplom_PisarevModel.Sklade">
+              <MappingFragment StoreEntitySet="Sklade">
+                <ScalarProperty Name="Id_Sklad" ColumnName="Id_Sklad" />
+                <ScalarProperty Name="Id_tipa_complect" ColumnName="Id_tipa_complect" />
+                <ScalarProperty Name="Id_firmi" ColumnName="Id_firmi" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="Vsego" ColumnName="Vsego" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sotrudniki">
+            <EntityTypeMapping TypeName="BD_Diplom_PisarevModel.Sotrudniki">
+              <MappingFragment StoreEntitySet="Sotrudniki">
+                <ScalarProperty Name="Id_sotrud" ColumnName="Id_sotrud" />
+                <ScalarProperty Name="FIO" ColumnName="FIO" />
+                <ScalarProperty Name="Id_otdela" ColumnName="Id_otdela" />
+                <ScalarProperty Name="Id_doljnosti" ColumnName="Id_doljnosti" />
+                <ScalarProperty Name="DR" ColumnName="DR" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="e_mail" ColumnName="e_mail" />
+                <ScalarProperty Name="Kommentatij" ColumnName="Kommentatij" />
+                <ScalarProperty Name="role" ColumnName="role" />
+                <ScalarProperty Name="Id_role" ColumnName="Id_role" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="BD_Diplom_PisarevModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Temi_zayavok">
+            <EntityTypeMapping TypeName="BD_Diplom_PisarevModel.Temi_zayavok">
+              <MappingFragment StoreEntitySet="Temi_zayavok">
+                <ScalarProperty Name="Id_temi_zayavi" ColumnName="Id_temi_zayavi" />
+                <ScalarProperty Name="Nazvanie" ColumnName="Nazvanie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tipi_complect">
+            <EntityTypeMapping TypeName="BD_Diplom_PisarevModel.Tipi_complect">
+              <MappingFragment StoreEntitySet="Tipi_complect">
+                <ScalarProperty Name="Id_tipa_complect" ColumnName="Id_tipa_complect" />
+                <ScalarProperty Name="Nazvanie" ColumnName="Nazvanie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tipi_oborud">
+            <EntityTypeMapping TypeName="BD_Diplom_PisarevModel.Tipi_oborud">
+              <MappingFragment StoreEntitySet="Tipi_oborud">
+                <ScalarProperty Name="Id_tipa_oborud" ColumnName="Id_tipa_oborud" />
+                <ScalarProperty Name="Nazvanie" ColumnName="Nazvanie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tipi_PO">
+            <EntityTypeMapping TypeName="BD_Diplom_PisarevModel.Tipi_PO">
+              <MappingFragment StoreEntitySet="Tipi_PO">
+                <ScalarProperty Name="Id_tipa_PO" ColumnName="Id_tipa_PO" />
+                <ScalarProperty Name="Nazvanie" ColumnName="Nazvanie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zayavki">
+            <EntityTypeMapping TypeName="BD_Diplom_PisarevModel.Zayavki">
+              <MappingFragment StoreEntitySet="Zayavki">
+                <ScalarProperty Name="Id_zayavki" ColumnName="Id_zayavki" />
+                <ScalarProperty Name="Id_sotrud" ColumnName="Id_sotrud" />
+                <ScalarProperty Name="Id_otdela" ColumnName="Id_otdela" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="Data_zaversh" ColumnName="Data_zaversh" />
+                <ScalarProperty Name="Id_sotrud_teh" ColumnName="Id_sotrud_teh" />
+                <ScalarProperty Name="Id_temi_zayavki" ColumnName="Id_temi_zayavki" />
+                <ScalarProperty Name="Vajnost" ColumnName="Vajnost" />
+                <ScalarProperty Name="Statys" ColumnName="Statys" />
+                <ScalarProperty Name="Sostoyanie" ColumnName="Sostoyanie" />
+                <ScalarProperty Name="Id_tipa_PO" ColumnName="Id_tipa_PO" />
+                <ScalarProperty Name="Id_PO" ColumnName="Id_PO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

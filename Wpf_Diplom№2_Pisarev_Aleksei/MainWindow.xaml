@@ -8,7 +8,7 @@
        Title="Register" Height="450" Width="380"
         AllowsTransparency="True" Background="Transparent"
         WindowStyle="None" ResizeMode="NoResize"
-        MouseDown="Window_onMouseDown">
+        MouseDown="Window_onMouseDown" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
@@ -41,7 +41,7 @@
 
             <StackPanel Grid.Row="1">
                 <StackPanel Orientation="Horizontal">
-                    <TextBox FontFamily="helvetica"
+                    <TextBox x:Name="TXLogin" FontFamily="helvetica"
                          FontWeight="Light"
                          Text="User_name"
                          FontSize="20"
@@ -67,7 +67,7 @@
                 
                 
                 <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
-                    <PasswordBox FontFamily="helvetica"
+                    <PasswordBox x:Name="TXPass" FontFamily="helvetica"
                          FontWeight="Light"
                          Password="Password"
                          FontSize="20"
@@ -93,7 +93,7 @@
 
 
                 <StackPanel Orientation="Horizontal" Margin="0,30,0,0">
-                    <Button Width="100" Height="35" Content="LOGIN" Margin="60,0,60,0"/>
+                    <Button x:Name="BtAyth" Width="100" Height="35" Content="LOGIN" Margin="60,0,60,0"  Click="BtAyth_Click"/>
                     <Button Width="100" Height="35" Content="EXID" />
                 </StackPanel>
             </StackPanel>

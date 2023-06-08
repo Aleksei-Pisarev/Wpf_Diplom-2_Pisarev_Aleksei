@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Wpf_Diplom_2_Pisarev_Aleksei.Sotrydniki.Window_sotrydniki;
 
 namespace Wpf_Diplom_2_Pisarev_Aleksei.Sotrydniki
 {
@@ -23,6 +24,18 @@ namespace Wpf_Diplom_2_Pisarev_Aleksei.Sotrydniki
         public AppSotrydniki()
         {
             InitializeComponent();
+        }
+
+        private void Redactor_Click(object sender, RoutedEventArgs e)
+        {
+            Doljnosti_sotrydnika doljnosti_Sotrydnika = new Doljnosti_sotrydnika();
+            doljnosti_Sotrydnika.Show();
+        }
+
+        private void Redactor_otdela_Click(object sender, RoutedEventArgs e)
+        {
+            Otdel_sotrydnika otdel_Sotrydnika = new Otdel_sotrydnika(null);
+            otdel_Sotrydnika.Show();
         }
     }
 }

@@ -29,5 +29,17 @@ namespace Wpf_Diplom_2_Pisarev_Aleksei
         {
             Frame_Add.Content = new AppSotrydniki();
         }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+
+                DragMove();
+        }
+
+        private void Close_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }
