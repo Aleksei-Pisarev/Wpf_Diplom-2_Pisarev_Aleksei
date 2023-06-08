@@ -416,6 +416,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Sotrudniki_Doljnosti1">
+          <End Role="Doljnosti" Type="Self.Doljnosti" Multiplicity="1" />
+          <End Role="Sotrudniki" Type="Self.Sotrudniki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doljnosti">
+              <PropertyRef Name="Id_doljnosti" />
+            </Principal>
+            <Dependent Role="Sotrudniki">
+              <PropertyRef Name="role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Sotrudniki_Otdeli">
           <End Role="Otdeli" Type="Self.Otdeli" Multiplicity="1" />
           <End Role="Sotrudniki" Type="Self.Sotrudniki" Multiplicity="*" />
@@ -425,18 +437,6 @@
             </Principal>
             <Dependent Role="Sotrudniki">
               <PropertyRef Name="Id_otdela" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Sotrudniki_Role_Sotrudniki">
-          <End Role="Role_Sotrudniki" Type="Self.Role_Sotrudniki" Multiplicity="1" />
-          <End Role="Sotrudniki" Type="Self.Sotrudniki" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Role_Sotrudniki">
-              <PropertyRef Name="Id_Role" />
-            </Principal>
-            <Dependent Role="Sotrudniki">
-              <PropertyRef Name="Id_role" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -596,12 +596,12 @@
             <End Role="Doljnosti" EntitySet="Doljnosti" />
             <End Role="Sotrudniki" EntitySet="Sotrudniki" />
           </AssociationSet>
-          <AssociationSet Name="FK_Sotrudniki_Otdeli" Association="Self.FK_Sotrudniki_Otdeli">
-            <End Role="Otdeli" EntitySet="Otdeli" />
+          <AssociationSet Name="FK_Sotrudniki_Doljnosti1" Association="Self.FK_Sotrudniki_Doljnosti1">
+            <End Role="Doljnosti" EntitySet="Doljnosti" />
             <End Role="Sotrudniki" EntitySet="Sotrudniki" />
           </AssociationSet>
-          <AssociationSet Name="FK_Sotrudniki_Role_Sotrudniki" Association="Self.FK_Sotrudniki_Role_Sotrudniki">
-            <End Role="Role_Sotrudniki" EntitySet="Role_Sotrudniki" />
+          <AssociationSet Name="FK_Sotrudniki_Otdeli" Association="Self.FK_Sotrudniki_Otdeli">
+            <End Role="Otdeli" EntitySet="Otdeli" />
             <End Role="Sotrudniki" EntitySet="Sotrudniki" />
           </AssociationSet>
           <AssociationSet Name="FK_Zayavki_Otdeli" Association="Self.FK_Zayavki_Otdeli">
@@ -652,6 +652,7 @@
           <Property Name="Id_doljnosti" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nazvanie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Sotrudniki" Relationship="Self.FK_Sotrudniki_Doljnosti" FromRole="Doljnosti" ToRole="Sotrudniki" />
+          <NavigationProperty Name="Sotrudniki1" Relationship="Self.FK_Sotrudniki_Doljnosti1" FromRole="Doljnosti" ToRole="Sotrudniki" />
         </EntityType>
         <EntityType Name="Firmi">
           <Key>
@@ -755,7 +756,6 @@
           </Key>
           <Property Name="Id_Role" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nazvanie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Sotrudniki" Relationship="Self.FK_Sotrudniki_Role_Sotrudniki" FromRole="Role_Sotrudniki" ToRole="Sotrudniki" />
         </EntityType>
         <EntityType Name="Sklade">
           <Key>
@@ -788,11 +788,11 @@
           <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Doljnosti" Relationship="Self.FK_Sotrudniki_Doljnosti" FromRole="Sotrudniki" ToRole="Doljnosti" />
+          <NavigationProperty Name="Doljnosti1" Relationship="Self.FK_Sotrudniki_Doljnosti1" FromRole="Sotrudniki" ToRole="Doljnosti" />
           <NavigationProperty Name="Oborudovanie" Relationship="Self.FK_Oborudovanie_Sotrudniki" FromRole="Sotrudniki" ToRole="Oborudovanie" />
           <NavigationProperty Name="Odsujd_zayavki" Relationship="Self.FK_Odsujd_zayavki_Sotrudniki" FromRole="Sotrudniki" ToRole="Odsujd_zayavki" />
           <NavigationProperty Name="Odsujd_zayavki1" Relationship="Self.FK_Odsujd_zayavki_Sotrudniki1" FromRole="Sotrudniki" ToRole="Odsujd_zayavki" />
           <NavigationProperty Name="Otdeli" Relationship="Self.FK_Sotrudniki_Otdeli" FromRole="Sotrudniki" ToRole="Otdeli" />
-          <NavigationProperty Name="Role_Sotrudniki" Relationship="Self.FK_Sotrudniki_Role_Sotrudniki" FromRole="Sotrudniki" ToRole="Role_Sotrudniki" />
           <NavigationProperty Name="Zayavki" Relationship="Self.FK_Zayavki_Sotrudniki" FromRole="Sotrudniki" ToRole="Zayavki" />
         </EntityType>
         <EntityType Name="sysdiagrams">
@@ -922,6 +922,18 @@
             </Principal>
             <Dependent Role="Sotrudniki">
               <PropertyRef Name="Id_doljnosti" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sotrudniki_Doljnosti1">
+          <End Role="Doljnosti" Type="Self.Doljnosti" Multiplicity="1" />
+          <End Role="Sotrudniki" Type="Self.Sotrudniki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doljnosti">
+              <PropertyRef Name="Id_doljnosti" />
+            </Principal>
+            <Dependent Role="Sotrudniki">
+              <PropertyRef Name="role" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1117,18 +1129,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Sotrudniki_Role_Sotrudniki">
-          <End Role="Role_Sotrudniki" Type="Self.Role_Sotrudniki" Multiplicity="1" />
-          <End Role="Sotrudniki" Type="Self.Sotrudniki" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Role_Sotrudniki">
-              <PropertyRef Name="Id_Role" />
-            </Principal>
-            <Dependent Role="Sotrudniki">
-              <PropertyRef Name="Id_role" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Sklade_Tipi_complect">
           <End Role="Tipi_complect" Type="Self.Tipi_complect" Multiplicity="1" />
           <End Role="Sklade" Type="Self.Sklade" Multiplicity="*" />
@@ -1217,6 +1217,10 @@
             <End Role="Doljnosti" EntitySet="Doljnosti" />
             <End Role="Sotrudniki" EntitySet="Sotrudniki" />
           </AssociationSet>
+          <AssociationSet Name="FK_Sotrudniki_Doljnosti1" Association="Self.FK_Sotrudniki_Doljnosti1">
+            <End Role="Doljnosti" EntitySet="Doljnosti" />
+            <End Role="Sotrudniki" EntitySet="Sotrudniki" />
+          </AssociationSet>
           <AssociationSet Name="FK_Sklade_Firmi" Association="Self.FK_Sklade_Firmi">
             <End Role="Firmi" EntitySet="Firmi" />
             <End Role="Sklade" EntitySet="Sklade" />
@@ -1280,10 +1284,6 @@
           <AssociationSet Name="FK_Zayavki_PO" Association="Self.FK_Zayavki_PO">
             <End Role="PO" EntitySet="PO" />
             <End Role="Zayavki" EntitySet="Zayavki" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Sotrudniki_Role_Sotrudniki" Association="Self.FK_Sotrudniki_Role_Sotrudniki">
-            <End Role="Role_Sotrudniki" EntitySet="Role_Sotrudniki" />
-            <End Role="Sotrudniki" EntitySet="Sotrudniki" />
           </AssociationSet>
           <AssociationSet Name="FK_Sklade_Tipi_complect" Association="Self.FK_Sklade_Tipi_complect">
             <End Role="Tipi_complect" EntitySet="Tipi_complect" />

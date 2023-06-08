@@ -4,31 +4,32 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="53c0e969af4a432a859e37d811772b4f" Name="Diagram1">
+      <Diagram DiagramId="a39dd24153a348cb9971a4c3b06d7749" Name="Diagram1">
         <EntityTypeShape EntityType="BD_Diplom_PisarevModel.Complect_oborud" Width="1.5" PointX="8.25" PointY="6.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="BD_Diplom_PisarevModel.Doljnosti" Width="1.5" PointX="3.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_Diplom_PisarevModel.Doljnosti" Width="1.5" PointX="3.75" PointY="3.125" IsExpanded="true" />
         <EntityTypeShape EntityType="BD_Diplom_PisarevModel.Firmi" Width="1.5" PointX="6" PointY="2.5" IsExpanded="true" />
         <EntityTypeShape EntityType="BD_Diplom_PisarevModel.Haracteristiki" Width="1.5" PointX="6" PointY="23.25" IsExpanded="true" />
         <EntityTypeShape EntityType="BD_Diplom_PisarevModel.Haracteristiki_Complect" Width="1.5" PointX="8.25" PointY="23.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="BD_Diplom_PisarevModel.Hatacteristiki_PO" Width="1.5" PointX="8.25" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_Diplom_PisarevModel.Hatacteristiki_PO" Width="1.5" PointX="8.25" PointY="10.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BD_Diplom_PisarevModel.Oborudovanie" Width="1.5" PointX="3" PointY="6.5" IsExpanded="true" />
         <EntityTypeShape EntityType="BD_Diplom_PisarevModel.Odsujd_zayavki" Width="1.5" PointX="11.25" PointY="6.625" IsExpanded="true" />
         <EntityTypeShape EntityType="BD_Diplom_PisarevModel.Otdeli" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
-        <EntityTypeShape EntityType="BD_Diplom_PisarevModel.PO" Width="1.5" PointX="6" PointY="17.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="BD_Diplom_PisarevModel.Role_Sotrudniki" Width="1.5" PointX="3.75" PointY="10.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="BD_Diplom_PisarevModel.Sklade" Width="1.5" PointX="6" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_Diplom_PisarevModel.PO" Width="1.5" PointX="6" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_Diplom_PisarevModel.Role_Sotrudniki" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_Diplom_PisarevModel.Sklade" Width="1.5" PointX="6" PointY="12" IsExpanded="true" />
         <EntityTypeShape EntityType="BD_Diplom_PisarevModel.Sotrudniki" Width="1.5" PointX="6" PointY="5.5" IsExpanded="true" />
         <EntityTypeShape EntityType="BD_Diplom_PisarevModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
         <EntityTypeShape EntityType="BD_Diplom_PisarevModel.Temi_zayavok" Width="1.5" PointX="6" PointY="20.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="BD_Diplom_PisarevModel.Tipi_complect" Width="1.5" PointX="3.75" PointY="13.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="BD_Diplom_PisarevModel.Tipi_oborud" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BD_Diplom_PisarevModel.Tipi_PO" Width="1.5" PointX="3.75" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_Diplom_PisarevModel.Tipi_complect" Width="1.5" PointX="3.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_Diplom_PisarevModel.Tipi_oborud" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_Diplom_PisarevModel.Tipi_PO" Width="1.5" PointX="3.75" PointY="16.25" IsExpanded="true" />
         <EntityTypeShape EntityType="BD_Diplom_PisarevModel.Zayavki" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="BD_Diplom_PisarevModel.FK_Complect_oborud_Firmi" ManuallyRouted="false" />
         <AssociationConnector Association="BD_Diplom_PisarevModel.FK_Complect_oborud_Oborudovanie" ManuallyRouted="false" />
         <AssociationConnector Association="BD_Diplom_PisarevModel.FK_Complect_oborud_Sklade" ManuallyRouted="false" />
         <AssociationConnector Association="BD_Diplom_PisarevModel.FK_Complect_oborud_Tipi_complect" ManuallyRouted="false" />
         <AssociationConnector Association="BD_Diplom_PisarevModel.FK_Sotrudniki_Doljnosti" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_Diplom_PisarevModel.FK_Sotrudniki_Doljnosti1" ManuallyRouted="false" />
         <AssociationConnector Association="BD_Diplom_PisarevModel.FK_Sklade_Firmi" ManuallyRouted="false" />
         <AssociationConnector Association="BD_Diplom_PisarevModel.FK_Haracteristiki_Complect_Haracteristiki" ManuallyRouted="false" />
         <AssociationConnector Association="BD_Diplom_PisarevModel.FK_Haracteristiki_Tipi_complect" ManuallyRouted="false" />
@@ -45,7 +46,6 @@
         <AssociationConnector Association="BD_Diplom_PisarevModel.FK_Zayavki_Otdeli" ManuallyRouted="false" />
         <AssociationConnector Association="BD_Diplom_PisarevModel.FK_PO_Tipi_PO1" ManuallyRouted="false" />
         <AssociationConnector Association="BD_Diplom_PisarevModel.FK_Zayavki_PO" ManuallyRouted="false" />
-        <AssociationConnector Association="BD_Diplom_PisarevModel.FK_Sotrudniki_Role_Sotrudniki" ManuallyRouted="false" />
         <AssociationConnector Association="BD_Diplom_PisarevModel.FK_Sklade_Tipi_complect" ManuallyRouted="false" />
         <AssociationConnector Association="BD_Diplom_PisarevModel.FK_Zayavki_Sotrudniki" ManuallyRouted="false" />
         <AssociationConnector Association="BD_Diplom_PisarevModel.FK_Zayavki_Temi_zayavok" ManuallyRouted="false" />

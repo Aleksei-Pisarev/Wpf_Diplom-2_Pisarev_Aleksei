@@ -14,16 +14,7 @@ namespace Wpf_Diplom_2_Pisarev_Aleksei
     
     public partial class Role_Sotrudniki
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Role_Sotrudniki()
-        {
-            this.Sotrudniki = new HashSet<Sotrudniki>();
-        }
-    
         public int Id_Role { get; set; }
         public string Nazvanie { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Sotrudniki> Sotrudniki { get; set; }
     }
 }

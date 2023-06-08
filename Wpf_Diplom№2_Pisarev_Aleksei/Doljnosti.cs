@@ -18,6 +18,7 @@ namespace Wpf_Diplom_2_Pisarev_Aleksei
         public Doljnosti()
         {
             this.Sotrudniki = new HashSet<Sotrudniki>();
+            this.Sotrudniki1 = new HashSet<Sotrudniki>();
         }
     
         public int Id_doljnosti { get; set; }
@@ -25,5 +26,7 @@ namespace Wpf_Diplom_2_Pisarev_Aleksei
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Sotrudniki> Sotrudniki { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Sotrudniki> Sotrudniki1 { get; set; }
     }
 }

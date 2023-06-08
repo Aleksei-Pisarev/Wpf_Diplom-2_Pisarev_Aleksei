@@ -65,35 +65,35 @@
 
         <StackPanel  Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Height="290"  Width="200" Margin="0,73,0,0">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,7,0,0">
-                <TextBox  Style="{StaticResource TextBox1}" />
+                <TextBox Text="{Binding FIO}"  Style="{StaticResource TextBox1}" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,7,0,0">
-                <ComboBox  Style="{StaticResource ComboBox1}"/>
+                <ComboBox Text="{Binding Otdeli}" Style="{StaticResource ComboBox1}"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,7,0,0">
-                <ComboBox  Style="{StaticResource ComboBox1}"/>
+                <ComboBox Text="{Binding Doljnosti}" Style="{StaticResource ComboBox1}"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,7,0,0">
-                <ComboBox  Style="{StaticResource ComboBox1}"/>
+                <TextBox  Text="{Binding DR}" Style="{StaticResource TextBox1}"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,7,0,0">
-                <TextBox  Style="{StaticResource TextBox1}" />
+                <TextBox  Text="{Binding Adres}" Style="{StaticResource TextBox1}" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,7,0,0">
-                <TextBox  Style="{StaticResource TextBox1}" />
+                <TextBox Text="{Binding  Telefon}"  Style="{StaticResource TextBox1}" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,7,0,0">
-                <TextBox  Style="{StaticResource TextBox1}" />
+                <TextBox Text="{Binding e_mail}" Style="{StaticResource TextBox1}" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,7,0,0">
-                <TextBox  Style="{StaticResource TextBox1}" />
+                <TextBox Text="{Binding Kommentatij}"  Style="{StaticResource TextBox1}" />
             </StackPanel>
         </StackPanel>
 
@@ -127,7 +127,6 @@
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0" >
                 
                 <Button Width="150" Height="40" Content="Регистрировать" />
-                <Button x:Name="Redactor" Width="150" Height="40" Content="Редактор должности" Margin="0,10,0,0" Click="Redactor_Click"/>
                 <Button x:Name="Redactor_otdela" Width="150" Height="40" Content="Редактор отдела" Margin="0,10,0,0" Click="Redactor_otdela_Click" />
             </StackPanel>
         </StackPanel>

@@ -38,6 +38,7 @@ namespace Wpf_Diplom_2_Pisarev_Aleksei
         public string Password { get; set; }
     
         public virtual Doljnosti Doljnosti { get; set; }
+        public virtual Doljnosti Doljnosti1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Oborudovanie> Oborudovanie { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -45,7 +46,6 @@ namespace Wpf_Diplom_2_Pisarev_Aleksei
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Odsujd_zayavki> Odsujd_zayavki1 { get; set; }
         public virtual Otdeli Otdeli { get; set; }
-        public virtual Role_Sotrudniki Role_Sotrudniki { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Zayavki> Zayavki { get; set; }
     }
