@@ -69,11 +69,11 @@
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,7,0,0">
-                <ComboBox x:Name="ComboBox_Otdel" Text="{Binding Otdeli.Nazvanie}" Style="{StaticResource ComboBox1}"/>
+                <ComboBox x:Name="ComboBox_Otdel" SelectedItem="{Binding Otdeli}" Style="{StaticResource ComboBox1}" DisplayMemberPath="Nazvanie"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,7,0,0">
-                <ComboBox x:Name="ComboBox_Doljnosti" Text="{Binding Doljnosti.Nazvanie}" Style="{StaticResource ComboBox1}"/>
+                <ComboBox x:Name="ComboBox_Doljnosti" SelectedItem="{Binding Doljnosti}" Style="{StaticResource ComboBox1}" DisplayMemberPath="Nazvanie"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,7,0,0">
@@ -114,11 +114,11 @@
         </StackPanel>
         <StackPanel Grid.Column="3" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Height="290"  Width="238" Margin="0,73,0,0">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,7,0,0">
-                <TextBox Text="{Binding Doljnosti.Id_doljnosti}" Style="{StaticResource TextBox1}"/>
+                <ComboBox x:Name="ComboBox_Role" SelectedItem="{Binding Doljnosti1}" Style="{StaticResource ComboBox1}" DisplayMemberPath="Nazvanie"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,7,0,0">
-                <TextBox Text="{Binding Login}" Style="{StaticResource TextBox1}"/>
+                <TextBox Text="{Binding Login}" Style="{StaticResource TextBox1}" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,7,0,0">

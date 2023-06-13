@@ -33,7 +33,6 @@ namespace Wpf_Diplom_2_Pisarev_Aleksei
         public string e_mail { get; set; }
         public string Kommentatij { get; set; }
         public int role { get; set; }
-        public int Id_role { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
     

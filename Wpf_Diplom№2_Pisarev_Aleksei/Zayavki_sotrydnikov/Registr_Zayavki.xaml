@@ -5,40 +5,46 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Wpf_Diplom_2_Pisarev_Aleksei.Zayavki_sotrydnikov"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="Registr_Zayavki">
+      d:DesignHeight="400" d:DesignWidth="700"
+      Title="Заявки (Модуль Пользователя)" IsVisibleChanged="Page_IsVisibleChanged">
 
-    <Grid Background="Aquamarine">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="23*"/>
-                <RowDefinition Height="127*"/>
-            </Grid.RowDefinitions>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="23*"/>
+            <RowDefinition Height="127*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+
             <StackPanel Orientation="Horizontal">
-                <Button Height="50" Width="150" Content="Сохранить" FontSize="20" Margin="0,0,10,0" />
-                <Button Height="50" Width="150" Content="Назад" FontSize="20"  />
+                <Button x:Name="BtnAdd_Zayavki" Click="BtnAdd_Zayavki_Click" Height="30" Width="120" Content="Добавить"  FontSize="20" Margin="10,0,10,0" />
+
+                <Button Height="30" Width="120" Content="Удалить" FontSize="20"  Margin="10,0,0,0" />
             </StackPanel>
         </Grid>
-
         <Grid Grid.Row="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="113*"/>
-                <RowDefinition Height="50*"/>
-                <RowDefinition Height="50*"/>
-                <RowDefinition Height="50*"/>
-                <RowDefinition Height="50*"/>
-                <RowDefinition Height="246*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="11*"/>
-                <ColumnDefinition Width="101*"/>
-                <ColumnDefinition Width="101*"/>
-                <ColumnDefinition Width="288*"/>
 
-
-            </Grid.ColumnDefinitions>
+            <DataGrid AutoGenerateColumns="False" IsReadOnly="True" x:Name="DtGrid_Zayavki">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Код" Binding="{Binding Id_zayavki}"/>
+                    <DataGridTextColumn Header="Дата" Binding="{Binding Data}"/>
+                    <DataGridTextColumn Header="Тема заявки" Binding="{Binding Temi_zayavok.Nazvanie}" />
+                    <DataGridTextColumn Header="Сотрудники" Binding="{Binding Sotrudniki.FIO}"/>
+                    <DataGridTextColumn Header="Отдел" Binding="{Binding Otdeli.Nazvanie}"/>
+                    <DataGridTextColumn Header="Исполнитель" Binding="{Binding Sotrudniki.FIO}"/>
+                    <DataGridTextColumn Header="Важность" Binding="{Binding Vajnost}"/>
+                    <DataGridTextColumn Header="Статус" Binding="{Binding Statys}"/>
+                    <DataGridTextColumn Header="Состояние" Binding="{Binding Sostoyanie}"/>
+                    <DataGridTextColumn Header="Тип ПО" Binding="{Binding Tipi_PO.Nazvanie}"/>
+                    <DataGridTextColumn Header="ПО" Binding="{Binding PO.Nazvanie}"/>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="ButtonEdit" Content="Редактировать" Click="ButtonEdit_Click"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
         </Grid>
-
-
     </Grid>
 </Page>

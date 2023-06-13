@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "D:\VS\Wpf_Diplom№2_Pisarev_Aleksei\Wpf_Diplom№2_Pisarev_Aleksei\DataBase.edmx" включено. 
+﻿// Создание кода T4 для модели "D:\VS\Wpf_Diplom№2_Pisarev_Aleksei\Wpf_Diplom№2_Pisarev_Aleksei\Model1.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.

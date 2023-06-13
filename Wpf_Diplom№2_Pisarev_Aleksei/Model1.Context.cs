@@ -17,13 +17,11 @@ namespace Wpf_Diplom_2_Pisarev_Aleksei
     {
 
         private static BD_Diplom_PisarevEntities _context;
-
         public static BD_Diplom_PisarevEntities GetContext()
         {
-            if (_context == null) 
+            if (_context == null)
                 _context = new BD_Diplom_PisarevEntities();
             return _context;
-
         }
 
         public BD_Diplom_PisarevEntities()

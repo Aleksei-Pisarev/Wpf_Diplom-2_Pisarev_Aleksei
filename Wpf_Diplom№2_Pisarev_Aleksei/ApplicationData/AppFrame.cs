@@ -9,6 +9,6 @@ namespace Wpf_Diplom_2_Pisarev_Aleksei.ApplicationData
 {
     internal class AppFrame
     {
-        private static Frame FrameFrame_Add;
+        public static Frame MainFrame;
     }
 }

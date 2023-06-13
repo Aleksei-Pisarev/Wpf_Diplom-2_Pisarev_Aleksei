@@ -78,7 +78,7 @@
           <Property Name="Id_obsujd" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Id_zayavki" Type="int" Nullable="false" />
           <Property Name="Data_vramya" Type="date" Nullable="false" />
-          <Property Name="Kommentarij" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Kommentarij" Type="varchar" MaxLength="50" />
           <Property Name="Id_kem_soversh" Type="int" Nullable="false" />
           <Property Name="Id_komu" Type="int" Nullable="false" />
         </EntityType>
@@ -127,9 +127,8 @@
           <Property Name="Adres" Type="varchar(max)" Nullable="false" />
           <Property Name="Telefon" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="e_mail" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Kommentatij" Type="varchar(max)" Nullable="false" />
+          <Property Name="Kommentatij" Type="varchar(max)" />
           <Property Name="role" Type="int" Nullable="false" />
-          <Property Name="Id_role" Type="int" Nullable="false" />
           <Property Name="Login" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
@@ -721,7 +720,7 @@
           <Property Name="Id_obsujd" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Id_zayavki" Type="Int32" Nullable="false" />
           <Property Name="Data_vramya" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Kommentarij" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Kommentarij" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Id_kem_soversh" Type="Int32" Nullable="false" />
           <Property Name="Id_komu" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Sotrudniki" Relationship="Self.FK_Odsujd_zayavki_Sotrudniki" FromRole="Odsujd_zayavki" ToRole="Sotrudniki" />
@@ -782,9 +781,8 @@
           <Property Name="Adres" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="e_mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Kommentatij" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Kommentatij" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="role" Type="Int32" Nullable="false" />
-          <Property Name="Id_role" Type="Int32" Nullable="false" />
           <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Doljnosti" Relationship="Self.FK_Sotrudniki_Doljnosti" FromRole="Sotrudniki" ToRole="Doljnosti" />
@@ -1443,7 +1441,6 @@
                 <ScalarProperty Name="e_mail" ColumnName="e_mail" />
                 <ScalarProperty Name="Kommentatij" ColumnName="Kommentatij" />
                 <ScalarProperty Name="role" ColumnName="role" />
-                <ScalarProperty Name="Id_role" ColumnName="Id_role" />
                 <ScalarProperty Name="Login" ColumnName="Login" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
               </MappingFragment>

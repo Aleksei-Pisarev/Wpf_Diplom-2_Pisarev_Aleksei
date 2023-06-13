@@ -41,17 +41,19 @@ namespace Wpf_Diplom_2_Pisarev_Aleksei
 
             if (_currentSotrudniki != null)
             {
-                MessageBox.Show("Вход успешно выполнен" + ($"Дабро пожаловать {_currentSotrudniki.FIO}"), MessageBoxImage.Information + "Информация", MessageBoxButton.OK);
-
-
-                   
+                MessageBox.Show("Вход успешно выполнен " + ($"Добро пожаловать {_currentSotrudniki.FIO}"), "Информация",MessageBoxButton.OK, MessageBoxImage.Information  );          
             }
-           
-     
 
            if (_currentSotrudniki.Doljnosti.Id_doljnosti == 1 )
             {
                Glavnoe_okno_administratora glavnoe_Okno_Administratora = new Glavnoe_okno_administratora();
+                glavnoe_Okno_Administratora.Show();
+                Close();
+            }
+
+            else if (_currentSotrudniki.Doljnosti.Id_doljnosti == 2)
+            {
+                Glavnoe_okno_administratora glavnoe_Okno_Administratora = new Glavnoe_okno_administratora();
                 glavnoe_Okno_Administratora.Show();
                 Close();
             }
@@ -61,10 +63,6 @@ namespace Wpf_Diplom_2_Pisarev_Aleksei
             {
                 MessageBox.Show("Вход в приложение не прошло, повторите попытку", MessageBoxImage.Error + "Внимание", MessageBoxButton.OK);
             }
-      
-
-                
-            
         }
     }
 }

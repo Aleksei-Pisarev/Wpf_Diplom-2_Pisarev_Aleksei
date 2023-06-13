@@ -11,23 +11,23 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Wpf_Diplom_2_Pisarev_Aleksei.ApplicationData;
 using Wpf_Diplom_2_Pisarev_Aleksei.Sotrydniki;
 
 namespace Wpf_Diplom_2_Pisarev_Aleksei
 {
-    /// <summary>
-    /// Логика взаимодействия для Glavnoe_okno_administratora.xaml
-    /// </summary>
     public partial class Glavnoe_okno_administratora : Window
     {
         public Glavnoe_okno_administratora()
         {
             InitializeComponent();
+            AppFrame.MainFrame = Frame_Add;
+            Frame_Add.Navigate(new Profil_Pages());
         }
 
         private void Add_Sotrydniki_Click(object sender, RoutedEventArgs e)
         {
-            Frame_Add.Content = new AppSotrydniki();
+           AppFrame.MainFrame.Navigate(new Sotrydniki.AppSotrydniki(null));
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -40,6 +40,11 @@ namespace Wpf_Diplom_2_Pisarev_Aleksei
         private void Close_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void Add_Zayavki_Click(object sender, RoutedEventArgs e)
+        {
+            AppFrame.MainFrame.Navigate(new Zayavki_sotrydnikov.Registr_Zayavki());
         }
     }
 }

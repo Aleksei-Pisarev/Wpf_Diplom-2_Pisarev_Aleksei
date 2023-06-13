@@ -31,6 +31,7 @@ namespace Wpf_Diplom_2_Pisarev_Aleksei.Sotrydniki
 
             ComboBox_Doljnosti.ItemsSource = BD_Diplom_PisarevEntities.GetContext().Doljnosti.ToList();
             ComboBox_Otdel.ItemsSource = BD_Diplom_PisarevEntities.GetContext().Otdeli.ToList();
+            ComboBox_Role.ItemsSource = BD_Diplom_PisarevEntities.GetContext().Doljnosti.ToList() ;
            
 
         }
@@ -47,7 +48,9 @@ namespace Wpf_Diplom_2_Pisarev_Aleksei.Sotrydniki
             StringBuilder errors = new StringBuilder();
             if (string.IsNullOrWhiteSpace(_currentSotrudniki.FIO))
                 errors.AppendLine("Укажите Фамилию Имя Отчество");
-            if (_currentSotrudniki.Doljnosti.Nazvanie == null)
+            if (_currentSotrudniki.Doljnosti == null )
+                errors.AppendLine("Выберите название должности");
+            if (_currentSotrudniki.Otdeli == null)
                 errors.AppendLine("Выберите название должности");
             if (string.IsNullOrWhiteSpace(_currentSotrudniki.DR.Date.ToString()))
                 errors.AppendLine("Укажите дату рождения");
@@ -57,7 +60,7 @@ namespace Wpf_Diplom_2_Pisarev_Aleksei.Sotrydniki
                 errors.AppendLine("Укажите электронную почту");
             if (string.IsNullOrWhiteSpace(_currentSotrudniki.Kommentatij))
                 errors.AppendLine("Укажите электронную почту");
-            if (_currentSotrudniki.role <= 0)
+            if (_currentSotrudniki.Doljnosti1 == null)
                 errors.AppendLine($"Выберите должность сотрудника для регистрации \n 1) Администратор \n 2) Пользователь \n 3) СисАдминистратор \n айди должности должен называться с тем, как вы дали должность самому сотруднику"  );
 
             if (string.IsNullOrWhiteSpace(_currentSotrudniki.Login))

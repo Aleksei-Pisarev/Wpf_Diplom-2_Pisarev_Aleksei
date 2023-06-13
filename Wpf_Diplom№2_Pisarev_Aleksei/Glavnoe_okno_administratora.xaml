@@ -12,10 +12,11 @@
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="837*"/>
+            <ColumnDefinition Width="13*"/>
         </Grid.ColumnDefinitions>
-        
-        <Border CornerRadius="10" Grid.ColumnSpan="2">
+
+        <Border CornerRadius="10" Grid.ColumnSpan="3">
             <Border.Background>
                 <LinearGradientBrush>
                     <GradientStop Color="#7be9f6" Offset="0.0"/>
@@ -24,12 +25,12 @@
             </Border.Background>
         </Border>
 
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Height="370" Width="250">
             <!--Первый блок-->
             <StackPanel Orientation="Horizontal">
                 <Image Source="Images_icon/profel.png" Width="75" Height="50" HorizontalAlignment="Center"/>
                 <Button Content="Профель" Width="170" Height="40" FontSize="25"  HorizontalAlignment="Left" Style="{StaticResource Button1}" />
-                
+
             </StackPanel>
             <Border Width="250"
                     Height="3"
@@ -49,7 +50,7 @@
             <!--Третий блок-->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Image Source="Images_icon/Sklad.png" Width="50" Height="50" HorizontalAlignment="Left" />
-                <Button Content="Склад" Width="170" Height="40" FontSize="25" Style="{StaticResource Button1}"/>
+                <Button Background="Red" Content="Склад" Width="170" Height="40" FontSize="25" Style="{StaticResource Button1}"/>
             </StackPanel>
             <Border Width="250"
                     Height="3"
@@ -59,7 +60,7 @@
             <!--Четвёртый блок-->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Image Source="Images_icon/Zayavki.png" Width="50" Height="50" HorizontalAlignment="Left"/>
-                <Button Content="Заявки" Width="170" Height="40" FontSize="25" Style="{StaticResource Button1}"/>
+                <Button x:Name="Add_Zayavki" Click="Add_Zayavki_Click" Content="Заявки" Width="170" Height="40" FontSize="25" Style="{StaticResource Button1}"/>
             </StackPanel>
             <Border Width="250"
                     Height="3"
@@ -69,7 +70,7 @@
             <!--Пятый блок-->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Image Source="Images_icon/Oborydovanie.png" Width="50" Height="50" HorizontalAlignment="Left"/>
-                <Button Content="Оборудование" Width="170" Height="40" FontSize="25" Style="{StaticResource Button1}"/>
+                <Button Background="Red" Content="Оборудование" Width="170" Height="40" FontSize="25" Style="{StaticResource Button1}"/>
             </StackPanel>
             <Border Width="250"
                     Height="3"
@@ -77,13 +78,13 @@
                     Opacity="0.9"/>
             <!--Конец пятого блока-->
             <!--Шестой блок-->
-           
-            
+
+
             <!--Конец шестого блока-->
             <!--Седьмой блок-->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Image Source="Images_icon/Optins.png" Width="50" Height="50" HorizontalAlignment="Left"/>
-                <Button Content="Настройки" Width="170" Height="40" FontSize="25" Style="{StaticResource Button1}"/>
+                <Button Background="Red" Content="Настройки" Width="170" Height="40" FontSize="25" Style="{StaticResource Button1}"/>
             </StackPanel>
             <Border Width="250"
                     Height="3"
@@ -101,6 +102,6 @@
                     Opacity="0.9"/>
             <!--Конец восьмого блока-->
         </StackPanel>
-        <Frame x:Name="Frame_Add" Grid.Column="1" Background="Transparent" NavigationUIVisibility="Hidden"/>
+        <Frame x:Name="Frame_Add" Grid.Column="1" Background="Transparent" NavigationUIVisibility="Hidden" />
     </Grid>
 </Window>

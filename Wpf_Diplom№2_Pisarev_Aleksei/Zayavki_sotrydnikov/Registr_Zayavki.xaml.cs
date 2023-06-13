@@ -12,17 +12,36 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Wpf_Diplom_2_Pisarev_Aleksei.ApplicationData;
 
 namespace Wpf_Diplom_2_Pisarev_Aleksei.Zayavki_sotrydnikov
 {
-    /// <summary>
-    /// Логика взаимодействия для Registr_Zayavki.xaml
-    /// </summary>
     public partial class Registr_Zayavki : Page
     {
         public Registr_Zayavki()
         {
             InitializeComponent();
+            DtGrid_Zayavki.ItemsSource = BD_Diplom_PisarevEntities.GetContext().Zayavki.ToList();
+        }
+
+        private void BtnAdd_Zayavki_Click(object sender, RoutedEventArgs e)
+        {
+            AppFrame.MainFrame.Navigate(new Zayavki_sotrydnikov.Add_Zayavki(null));
+        }
+
+        private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (Visibility == Visibility.Visible)
+            {
+                BD_Diplom_PisarevEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(u => u.Reload());
+                DtGrid_Zayavki.ItemsSource = BD_Diplom_PisarevEntities.GetContext().Zayavki.ToList();
+            }
+        }
+
+
+        private void ButtonEdit_Click(object sender, RoutedEventArgs e)
+        {
+            AppFrame.MainFrame.Navigate(new Zayavki_sotrydnikov.Add_Zayavki((sender as Button).DataContext as Zayavki));
         }
     }
 }
