@@ -23,7 +23,7 @@
         </Grid>
         <Grid Grid.Row="1">
 
-            <DataGrid AutoGenerateColumns="False" IsReadOnly="True" x:Name="DtGrid_Zayavki">
+            <DataGrid AutoGenerateColumns="False" IsReadOnly="True" x:Name="DtGrid_Zayavki" Width="650" Height="300">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Код" Binding="{Binding Id_zayavki}"/>
                     <DataGridTextColumn Header="Дата" Binding="{Binding Data}"/>

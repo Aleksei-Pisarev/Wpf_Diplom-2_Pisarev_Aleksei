@@ -9,9 +9,23 @@
       Title="Profil_Pages">
 
     <Grid >
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="Окно Пользователя" FontSize="20"/>
-            
-        </StackPanel>
+        <Border>
+            <DockPanel>
+                <Border Width="130" Height="100" Padding="3" Background="White" CornerRadius="100" DockPanel.Dock="Top" HorizontalAlignment="Center" VerticalAlignment="Top" Margin=" 0 20 0 0">
+                    <Ellipse >
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="/Images/Images_foto.jpg" />
+                        </Ellipse.Fill>
+                    </Ellipse>
+                        
+                </Border>
+            </DockPanel>
+        </Border>
+
+        <Border BorderThickness="4" BorderBrush="White" CornerRadius="20" Width="800" Height="450" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 120 0 0" >
+                <Button Content="Редактировать фото" Width="200 " Height="40" FontSize="20"/>
+            </StackPanel>
+        </Border>
     </Grid>
 </Page>

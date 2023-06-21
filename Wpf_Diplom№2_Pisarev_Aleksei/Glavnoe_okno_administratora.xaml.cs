@@ -46,5 +46,15 @@ namespace Wpf_Diplom_2_Pisarev_Aleksei
         {
             AppFrame.MainFrame.Navigate(new Zayavki_sotrydnikov.Registr_Zayavki());
         }
+
+        private void Bt_sklad_Click(object sender, RoutedEventArgs e)
+        {
+            AppFrame.MainFrame.Navigate(new Sklad_PAge());
+        }
+
+        private void Bt_prof_Click(object sender, RoutedEventArgs e)
+        {
+            AppFrame.MainFrame.Navigate(new Profil_Pages());
+        }
     }
 }

@@ -24,48 +24,48 @@
 
             <StackPanel Grid.Row="1"  Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Width="400">
                 <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
-                    <TextBlock Text="Тема заявки" FontSize="20" Margin="0,0,20,0"/>
+                    <TextBlock Text="Тема заявки" FontSize="20" Margin="0,0,20,0" Foreground="White"/>
                     <ComboBox x:Name="ComboBox_Time_zayavki" Width="200" Height="30" SelectedItem="{Binding Temi_zayavok}"  DisplayMemberPath="Nazvanie"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="10,7,0,0">
-                    <TextBlock Text="Важность" FontSize="20" Margin="0,0,45,0"/>
+                    <TextBlock Text="Важность" FontSize="20" Margin="0,0,45,0" Foreground="White"/>
                     <TextBox x:Name="TextBox_Vajnosti" Text="{Binding Vajnost}" Width="200" Height="30" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="10,7,0,0">
-                    <TextBlock Text="Тип ПО" FontSize="20" Margin="0,0,64,0"/>
+                    <TextBlock Text="Тип ПО" FontSize="20" Margin="0,0,64,0" Foreground="White"/>
                     <ComboBox x:Name="ComboBox_Tipi_PO" Width="200" Height="30" SelectedItem="{Binding Tipi_PO}"  DisplayMemberPath="Nazvanie"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="10,7,0,0">
-                    <TextBlock Text="Название ПО" FontSize="20" Margin="0,0,10,0"/>
+                    <TextBlock Text="Название ПО" FontSize="20" Margin="0,0,10,0" Foreground="White"/>
                     <ComboBox x:Name="ComboBox_PO" Width="200" Height="30" SelectedItem="{Binding PO}"  DisplayMemberPath="Nazvanie"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="10,7,0,0">
-                    <TextBlock Text="Статус" FontSize="20" Margin="0,0,75,0"/>
+                    <TextBlock Text="Статус" FontSize="20" Margin="0,0,75,0" Foreground="White"/>
                     <TextBox x:Name="TextBox_Statys" Text="{Binding Statys}" Width="200" Height="30"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="10,7,0,0">
-                    <TextBlock Text="Состояние" FontSize="20" Margin="0,0,36,0"/>
+                    <TextBlock Text="Состояние" FontSize="20" Margin="0,0,36,0" Foreground="White"/>
                     <TextBox x:Name="TextBox_Sotoyanie" Text="{Binding Sostoyanie}" Width="200" Height="30"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="10,7,0,0">
-                    <TextBlock Text="Сотрудники" FontSize="20" Margin="0,0,23,0"/>
+                    <TextBlock Text="Сотрудники" FontSize="20" Margin="0,0,23,0" Foreground="White"/>
                     <ComboBox x:Name="ComboVox_Sotrud_teh" Width="200" Height="30" SelectedItem="{Binding Sotrudniki}"  DisplayMemberPath="FIO"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="10,7,0,0">
-                    <TextBlock Text="Дата/Время" FontSize="20" Margin="0,0,60,0"/>
+                    <TextBlock Text="Дата/Время" FontSize="20" Margin="0,0,60,0" Foreground="White"/>
                     <TextBox x:Name="TextBox_Data" Text="{Binding Data}" Width="165" Height="30"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="10,7,0,0">
-                    <TextBlock Text="Дата завершения" FontSize="20" Margin="0,0,10,0"/>
+                    <TextBlock Text="Дата завершения" FontSize="20" Margin="0,0,10,0" Foreground="White"/>
                     <TextBox x:Name="TextBox_DataZaversh" Text="{Binding Data_zaversh}" Width="165" Height="30"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="10,7,0,0">
-                    <TextBlock Text="Название отдела" FontSize="20" Margin="0,0,15,0"/>
+                    <TextBlock Text="Название отдела" FontSize="20" Margin="0,0,15,0" Foreground="White"/>
                     <ComboBox x:Name="ComboBox_Nazvanie_otdela" Width="165" Height="30" SelectedItem="{Binding Otdeli}"  DisplayMemberPath="Nazvanie"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="10,7,0,0">
-                    <TextBlock Text="Сотрудники" FontSize="20" Margin="0,0,25,0"/>
+                    <TextBlock Text="Сотрудники" FontSize="20" Margin="0,0,25,0" Foreground="White"/>
                     <ComboBox x:Name="ComboBox_Sotrydniki" Width="200" Height="30" SelectedItem="{Binding Sotrudniki}"  DisplayMemberPath="FIO"/>
                 </StackPanel>
             </StackPanel>

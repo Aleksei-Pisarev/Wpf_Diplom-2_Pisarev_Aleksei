@@ -64,5 +64,10 @@ namespace Wpf_Diplom_2_Pisarev_Aleksei
                 MessageBox.Show("Вход в приложение не прошло, повторите попытку", MessageBoxImage.Error + "Внимание", MessageBoxButton.OK);
             }
         }
+
+        private void Closed_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

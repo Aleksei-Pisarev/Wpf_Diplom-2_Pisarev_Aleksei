@@ -94,7 +94,8 @@
 
                 <StackPanel Orientation="Horizontal" Margin="0,30,0,0">
                     <Button x:Name="BtAyth" Width="100" Height="35" Content="LOGIN" Margin="60,0,60,0"  Click="BtAyth_Click"/>
-                    <Button Width="100" Height="35" Content="EXID" />
+                    <Button x:Name="Closed" Click="Closed_Click"
+                            Width="100" Height="35" Content="EXID" />
                 </StackPanel>
             </StackPanel>
         </Grid>
