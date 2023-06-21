@@ -30,7 +30,7 @@ namespace Wpf_Diplom_2_Pisarev_Aleksei
         public string Vajnost { get; set; }
         public string Statys { get; set; }
         public string Sostoyanie { get; set; }
-        public int Id_tipa_PO { get; set; }
+        public Nullable<int> Id_tipa_PO { get; set; }
         public int Id_PO { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

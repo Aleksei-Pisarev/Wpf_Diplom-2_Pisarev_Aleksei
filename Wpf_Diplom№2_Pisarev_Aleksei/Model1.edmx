@@ -98,13 +98,6 @@
           <Property Name="Nazvanie" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Srok_dejstviya" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="Role_Sotrudniki">
-          <Key>
-            <PropertyRef Name="Id_Role" />
-          </Key>
-          <Property Name="Id_Role" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nazvanie" Type="varchar" MaxLength="50" Nullable="false" />
-        </EntityType>
         <EntityType Name="Sklade">
           <Key>
             <PropertyRef Name="Id_Sklad" />
@@ -184,7 +177,7 @@
           <Property Name="Vajnost" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Statys" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Sostoyanie" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Id_tipa_PO" Type="int" Nullable="false" />
+          <Property Name="Id_tipa_PO" Type="int" />
           <Property Name="Id_PO" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_Complect_oborud_Firmi">
@@ -488,7 +481,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Zayavki_Tipi_PO">
-          <End Role="Tipi_PO" Type="Self.Tipi_PO" Multiplicity="1" />
+          <End Role="Tipi_PO" Type="Self.Tipi_PO" Multiplicity="0..1" />
           <End Role="Zayavki" Type="Self.Zayavki" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Tipi_PO">
@@ -510,7 +503,6 @@
           <EntitySet Name="Odsujd_zayavki" EntityType="Self.Odsujd_zayavki" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Otdeli" EntityType="Self.Otdeli" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PO" EntityType="Self.PO" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Role_Sotrudniki" EntityType="Self.Role_Sotrudniki" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sklade" EntityType="Self.Sklade" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sotrudniki" EntityType="Self.Sotrudniki" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
@@ -749,13 +741,6 @@
           <NavigationProperty Name="Tipi_PO" Relationship="Self.FK_PO_Tipi_PO1" FromRole="PO" ToRole="Tipi_PO" />
           <NavigationProperty Name="Zayavki" Relationship="Self.FK_Zayavki_PO" FromRole="PO" ToRole="Zayavki" />
         </EntityType>
-        <EntityType Name="Role_Sotrudniki">
-          <Key>
-            <PropertyRef Name="Id_Role" />
-          </Key>
-          <Property Name="Id_Role" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nazvanie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-        </EntityType>
         <EntityType Name="Sklade">
           <Key>
             <PropertyRef Name="Id_Sklad" />
@@ -854,7 +839,7 @@
           <Property Name="Vajnost" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Statys" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Sostoyanie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Id_tipa_PO" Type="Int32" Nullable="false" />
+          <Property Name="Id_tipa_PO" Type="Int32" />
           <Property Name="Id_PO" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Odsujd_zayavki" Relationship="Self.FK_Odsujd_zayavki_Zayavki" FromRole="Zayavki" ToRole="Odsujd_zayavki" />
           <NavigationProperty Name="Otdeli" Relationship="Self.FK_Zayavki_Otdeli" FromRole="Zayavki" ToRole="Otdeli" />
@@ -1164,7 +1149,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Zayavki_Tipi_PO">
-          <End Role="Tipi_PO" Type="Self.Tipi_PO" Multiplicity="1" />
+          <End Role="Tipi_PO" Type="Self.Tipi_PO" Multiplicity="0..1" />
           <End Role="Zayavki" Type="Self.Zayavki" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Tipi_PO">
@@ -1186,7 +1171,6 @@
           <EntitySet Name="Odsujd_zayavki" EntityType="Self.Odsujd_zayavki" />
           <EntitySet Name="Otdeli" EntityType="Self.Otdeli" />
           <EntitySet Name="PO" EntityType="Self.PO" />
-          <EntitySet Name="Role_Sotrudniki" EntityType="Self.Role_Sotrudniki" />
           <EntitySet Name="Sklade" EntityType="Self.Sklade" />
           <EntitySet Name="Sotrudniki" EntityType="Self.Sotrudniki" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
@@ -1406,14 +1390,6 @@
                 <ScalarProperty Name="Id_tipa_PO" ColumnName="Id_tipa_PO" />
                 <ScalarProperty Name="Nazvanie" ColumnName="Nazvanie" />
                 <ScalarProperty Name="Srok_dejstviya" ColumnName="Srok_dejstviya" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Role_Sotrudniki">
-            <EntityTypeMapping TypeName="BD_Diplom_PisarevModel.Role_Sotrudniki">
-              <MappingFragment StoreEntitySet="Role_Sotrudniki">
-                <ScalarProperty Name="Id_Role" ColumnName="Id_Role" />
-                <ScalarProperty Name="Nazvanie" ColumnName="Nazvanie" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

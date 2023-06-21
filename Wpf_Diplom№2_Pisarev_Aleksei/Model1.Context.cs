@@ -20,7 +20,7 @@ namespace Wpf_Diplom_2_Pisarev_Aleksei
 
         public static BD_Diplom_PisarevEntities GetContext()
         {
-            if (_context == null)
+            if (_context == null )
                 _context = new BD_Diplom_PisarevEntities();
             return _context;
         }
@@ -45,7 +45,6 @@ namespace Wpf_Diplom_2_Pisarev_Aleksei
         public virtual DbSet<Odsujd_zayavki> Odsujd_zayavki { get; set; }
         public virtual DbSet<Otdeli> Otdeli { get; set; }
         public virtual DbSet<PO> PO { get; set; }
-        public virtual DbSet<Role_Sotrudniki> Role_Sotrudniki { get; set; }
         public virtual DbSet<Sklade> Sklade { get; set; }
         public virtual DbSet<Sotrudniki> Sotrudniki { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
